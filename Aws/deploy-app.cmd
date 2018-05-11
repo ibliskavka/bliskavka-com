@@ -1,1 +1,1 @@
-aws s3 cp ../App s3://bliskavka-com-stack-app --recursive
+aws s3 sync ../App s3://bliskavka-com-stack-app
