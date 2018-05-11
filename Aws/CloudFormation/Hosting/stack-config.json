@@ -1,0 +1,8 @@
+{
+    "Parameters": {
+        "Environment": "Development",
+        "BaseUrl" : "waterfield.technology",
+        "AppUrl" : "nyc-roundtable.waterfield.technology",
+        "AcmCertArn" : "arn:aws:acm:us-east-1:847765041971:certificate/547c93c7-119a-46a8-bfb3-5658f9aa1087"
+    }
+}

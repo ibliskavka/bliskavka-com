@@ -1,0 +1,1 @@
+aws s3 cp ../App s3://bliskavka-com-stack-app --recursive

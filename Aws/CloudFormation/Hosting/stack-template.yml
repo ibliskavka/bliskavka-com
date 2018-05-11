@@ -1,0 +1,190 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+
+Description: >
+  Creates the bliskavka.com Environment. Executed by the pipeline so that the infrastructure matches the code version.
+
+
+Parameters:
+
+  Environment:
+    Type: String
+    Default: Development
+
+  # BaseUrl:
+  #   Type: String
+  #   Default: bliskavka.com
+  #   Description : The DNS name of an existing Amazon Route 53 hosted zone,
+  #   AllowedPattern : (?!-)[a-zA-Z0-9-.]{1,63}(?<!-)[^\\.]$
+  #   ConstraintDescription : Must be a valid DNS zone name WITHOUT trailing period.
+
+  # AppUrl:
+  #   Type: String
+  #   Default: ivan.bliskavka.com
+
+  # AcmCertArn:
+  #   Type: String
+  #   Default: arn:aws:acm:us-east-1:847765041971:certificate/547c93c7-119a-46a8-bfb3-5658f9aa1087
+
+Resources:
+
+#Start Web App Section
+
+  # CleanupBucketOnDelete:
+  #   Type: Custom::cleanupbucket
+  #   Properties:
+  #     ServiceToken: !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:pipeline-lambda-helpers-dev-cfn-delete-bucket-contents
+  #     BucketName: !Sub ${AWS::StackName}-app
+  #     Region: !Ref AWS::Region
+  #   DependsOn: AppBucket
+
+  AppBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub ${AWS::StackName}-app
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+      Tags:
+        - Key: Name
+          Value: !Sub ${AWS::StackName}-app
+        - Key: Client
+          Value: NYC
+        - Key: Project
+          Value: Roundtable
+        - Key: Environment
+          Value: !Ref Environment
+
+  AppBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      PolicyDocument:
+        Id: WebAppBucketPolicy
+        Version: 2012-10-17
+        Statement:
+          - Sid: PublicReadForGetBucketObjects
+            Effect: Allow
+            Principal: '*'
+            Action: 's3:GetObject'
+            Resource: !Join 
+              - ''
+              - - 'arn:aws:s3:::'
+                - !Ref AppBucket
+                - /*
+      Bucket: !Ref AppBucket
+
+  # OriginAccessIdentity:
+  #   Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+  #   Properties:
+  #     CloudFrontOriginAccessIdentityConfig:
+  #       Comment: Access identity between CloudFront and S3 bucket
+
+  #https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionConfig.html
+  #https://keita.blog/2015/11/24/hosting-a-single-page-app-on-s3-with-proper-urls/
+  #https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html
+  # AppDistribution:
+  #   Type: AWS::CloudFront::Distribution
+  #   Properties:
+  #     DistributionConfig: 
+  #       Origins:
+  #       - DomainName: !Sub ${AppBucket}.s3.amazonaws.com
+  #         Id: myS3Origin
+  #         S3OriginConfig:
+  #           OriginAccessIdentity: !Sub origin-access-identity/cloudfront/${OriginAccessIdentity}
+  #       Enabled: 'true'
+  #       Comment: CloudFront distribution for NYC Roundtable Angular App
+  #       CustomErrorResponses:
+  #       - ErrorCachingMinTTL: 5
+  #         ErrorCode: 404
+  #         ResponseCode: 200
+  #         ResponsePagePath: /index.html
+  #       DefaultRootObject: index.html
+  #       Logging:
+  #         IncludeCookies: 'false'
+  #         Bucket: codepipeline-waterfielddev.s3.amazonaws.com
+  #         Prefix: !Ref AWS::StackName
+  #       Aliases:
+  #       - !Ref AppUrl
+  #       DefaultCacheBehavior:
+  #         AllowedMethods:
+  #         # - DELETE
+  #           - GET
+  #           - HEAD
+  #           - OPTIONS
+  #         # - PATCH
+  #         # - POST
+  #         # - PUT
+  #         Compress: 'true'
+  #         TargetOriginId: myS3Origin
+  #         ForwardedValues:
+  #           QueryString: 'false'
+  #           Cookies:
+  #             Forward: none
+  #         ViewerProtocolPolicy: redirect-to-https
+  #       PriceClass: PriceClass_100
+  #       Restrictions:
+  #         GeoRestriction:
+  #           RestrictionType: whitelist
+  #           Locations:
+  #           - US
+  #       ViewerCertificate:
+  #         AcmCertificateArn: !Ref AcmCertArn
+  #         SslSupportMethod: sni-only
+  #     Tags: 
+  #       - Key: Name
+  #         Value: !Sub ${AWS::StackName}-distro
+  #       - Key: Client
+  #         Value: NYC
+  #       - Key: Project
+  #         Value: Roundtable
+  #       - Key: Environment
+  #         Value: !Ref Environment
+
+  # WebAppDns:
+  #   Type: AWS::Route53::RecordSetGroup
+  #   Properties:
+  #     HostedZoneName: !Sub ${BaseUrl}.
+  #     Comment: IP4 & IP6 alias targeted to CloudFront Distribution.
+  #     RecordSets:
+  #     - Name: !Ref AppUrl
+  #       Type: A
+  #       AliasTarget:
+  #         HostedZoneId: Z2FDTNDATAQYW2
+  #         DNSName: !GetAtt 
+  #           - AppDistribution
+  #           - DomainName
+  #     - Name: !Ref AppUrl
+  #       Type: AAAA
+  #       AliasTarget:
+  #         HostedZoneId: Z2FDTNDATAQYW2
+  #         DNSName: !GetAtt 
+  #           - AppDistribution
+  #           - DomainName
+
+#End Web App Section
+
+Outputs:
+  AppBucket:
+    Description: Where the angular app was deployed to
+    Value: !Ref AppBucket
+  WebsiteURL:
+    Value: !GetAtt 
+      - AppBucket
+      - WebsiteURL
+    Description: URL for website hosted on S3
+  # CloudFrontURL:
+  #   Value: !Join 
+  #     - ''
+  #     - - 'https://'
+  #       - !GetAtt 
+  #         - AppDistribution
+  #         - DomainName
+  #   Description: URL for website CDN
+  # S3BucketSecureURL:
+  #   Value: !Join 
+  #     - ''
+  #     - - 'https://'
+  #       - !GetAtt 
+  #         - AppBucket
+  #         - DomainName
+  #   Description: Name of S3 bucket to hold website content
