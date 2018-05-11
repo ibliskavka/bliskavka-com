@@ -3,14 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { IconTileComponent } from './components/icon-tile/icon-tile.component';
+import { PageHomeComponent } from './components/page-home/page-home.component';
+import { PagePrivacyComponent } from './components/page-privacy/page-privacy.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { SectionProjectsComponent } from './components/section-projects/section-projects.component';
+import { SectionSocialComponent } from './components/section-social/section-social.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IconTileComponent
+    IconTileComponent,
+    PageHomeComponent,
+    PagePrivacyComponent,
+    SectionProjectsComponent,
+    SectionSocialComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
