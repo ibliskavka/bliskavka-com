@@ -24,6 +24,9 @@ export class PagePrivacyComponent implements OnInit {
         case 'normal-day-in-russia':
           this.appTitle = 'Normal Day In Russia';
           break;
+        case 'piwigo-gallery':
+          this.appTitle = 'Piwigo Gallery';
+          break;
         default:
           this.appTitle = 'Apps'
       }
