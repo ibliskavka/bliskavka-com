@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: 2010-09-09
 
 
 Description: >
-  Creates the bliskavka.com Environment. Executed by the pipeline so that the infrastructure matches the code version.
+  Creates the bliskavka.com Environment
 
 
 Parameters:
