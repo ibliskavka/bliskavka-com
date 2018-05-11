@@ -73,72 +73,72 @@ Resources:
                 - /*
       Bucket: !Ref AppBucket
 
-  # OriginAccessIdentity:
-  #   Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
-  #   Properties:
-  #     CloudFrontOriginAccessIdentityConfig:
-  #       Comment: Access identity between CloudFront and S3 bucket
+  OriginAccessIdentity:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: Access identity between CloudFront and S3 bucket
 
   #https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionConfig.html
   #https://keita.blog/2015/11/24/hosting-a-single-page-app-on-s3-with-proper-urls/
   #https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html
-  # AppDistribution:
-  #   Type: AWS::CloudFront::Distribution
-  #   Properties:
-  #     DistributionConfig: 
-  #       Origins:
-  #       - DomainName: !Sub ${AppBucket}.s3.amazonaws.com
-  #         Id: myS3Origin
-  #         S3OriginConfig:
-  #           OriginAccessIdentity: !Sub origin-access-identity/cloudfront/${OriginAccessIdentity}
-  #       Enabled: 'true'
-  #       Comment: CloudFront distribution for NYC Roundtable Angular App
-  #       CustomErrorResponses:
-  #       - ErrorCachingMinTTL: 5
-  #         ErrorCode: 404
-  #         ResponseCode: 200
-  #         ResponsePagePath: /index.html
-  #       DefaultRootObject: index.html
-  #       Logging:
-  #         IncludeCookies: 'false'
-  #         Bucket: codepipeline-waterfielddev.s3.amazonaws.com
-  #         Prefix: !Ref AWS::StackName
-  #       Aliases:
-  #       - !Ref AppUrl
-  #       DefaultCacheBehavior:
-  #         AllowedMethods:
-  #         # - DELETE
-  #           - GET
-  #           - HEAD
-  #           - OPTIONS
-  #         # - PATCH
-  #         # - POST
-  #         # - PUT
-  #         Compress: 'true'
-  #         TargetOriginId: myS3Origin
-  #         ForwardedValues:
-  #           QueryString: 'false'
-  #           Cookies:
-  #             Forward: none
-  #         ViewerProtocolPolicy: redirect-to-https
-  #       PriceClass: PriceClass_100
-  #       Restrictions:
-  #         GeoRestriction:
-  #           RestrictionType: whitelist
-  #           Locations:
-  #           - US
-  #       ViewerCertificate:
-  #         AcmCertificateArn: !Ref AcmCertArn
-  #         SslSupportMethod: sni-only
-  #     Tags: 
-  #       - Key: Name
-  #         Value: !Sub ${AWS::StackName}-distro
-  #       - Key: Client
-  #         Value: NYC
-  #       - Key: Project
-  #         Value: Roundtable
-  #       - Key: Environment
-  #         Value: !Ref Environment
+  AppDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig: 
+        Origins:
+        - DomainName: !Sub ${AppBucket}.s3.amazonaws.com
+          Id: myS3Origin
+          S3OriginConfig:
+            OriginAccessIdentity: !Sub origin-access-identity/cloudfront/${OriginAccessIdentity}
+        Enabled: 'true'
+        Comment: CloudFront distribution for Angular App
+        CustomErrorResponses:
+        - ErrorCachingMinTTL: 5
+          ErrorCode: 404
+          ResponseCode: 200
+          ResponsePagePath: /index.html
+        DefaultRootObject: index.html
+        # Logging:
+        #   IncludeCookies: 'false'
+        #   Bucket: codepipeline-waterfielddev.s3.amazonaws.com
+        #   Prefix: !Ref AWS::StackName
+        # Aliases:
+        # - !Ref AppUrl
+        DefaultCacheBehavior:
+          AllowedMethods:
+          # - DELETE
+            - GET
+            - HEAD
+            - OPTIONS
+          # - PATCH
+          # - POST
+          # - PUT
+          Compress: 'true'
+          TargetOriginId: myS3Origin
+          ForwardedValues:
+            QueryString: 'false'
+            Cookies:
+              Forward: none
+          ViewerProtocolPolicy: redirect-to-https
+        PriceClass: PriceClass_100
+        # Restrictions:
+        #   GeoRestriction:
+        #     RestrictionType: whitelist
+        #     Locations:
+        #     - US
+        # ViewerCertificate:
+        #   AcmCertificateArn: !Ref AcmCertArn
+        #   SslSupportMethod: sni-only
+      Tags: 
+        - Key: Name
+          Value: !Sub ${AWS::StackName}-distro
+        - Key: Client
+          Value: Bliskavka
+        - Key: Project
+          Value: Home
+        - Key: Environment
+          Value: !Ref Environment
 
   # WebAppDns:
   #   Type: AWS::Route53::RecordSetGroup
@@ -172,14 +172,14 @@ Outputs:
       - AppBucket
       - WebsiteURL
     Description: URL for website hosted on S3
-  # CloudFrontURL:
-  #   Value: !Join 
-  #     - ''
-  #     - - 'https://'
-  #       - !GetAtt 
-  #         - AppDistribution
-  #         - DomainName
-  #   Description: URL for website CDN
+  CloudFrontURL:
+    Value: !Join 
+      - ''
+      - - 'https://'
+        - !GetAtt 
+          - AppDistribution
+          - DomainName
+    Description: URL for website CDN
   # S3BucketSecureURL:
   #   Value: !Join 
   #     - ''
