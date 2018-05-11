@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build && aws s3 sync dist/bliskavka-com s3://bliskavka-com-stack-app && aws cloudfront create-invalidation"
+    "deploy": "ng build && aws s3 sync dist/bliskavka-com s3://bliskavka-com-stack-app"
   },
   "private": true,
   "dependencies": {
