@@ -11,16 +11,16 @@ Parameters:
     Type: String
     Default: Development
 
-  # BaseUrl:
-  #   Type: String
-  #   Default: bliskavka.com
-  #   Description : The DNS name of an existing Amazon Route 53 hosted zone,
-  #   AllowedPattern : (?!-)[a-zA-Z0-9-.]{1,63}(?<!-)[^\\.]$
-  #   ConstraintDescription : Must be a valid DNS zone name WITHOUT trailing period.
+  BaseUrl:
+    Type: String
+    Default: bliskavka.com
+    Description : The DNS name of an existing Amazon Route 53 hosted zone,
+    AllowedPattern : (?!-)[a-zA-Z0-9-.]{1,63}(?<!-)[^\\.]$
+    ConstraintDescription : Must be a valid DNS zone name WITHOUT trailing period.
 
-  # AppUrl:
-  #   Type: String
-  #   Default: ivan.bliskavka.com
+  AppUrl:
+    Type: String
+    Default: ivan.bliskavka.com
 
   # AcmCertArn:
   #   Type: String
@@ -103,8 +103,8 @@ Resources:
         #   IncludeCookies: 'false'
         #   Bucket: codepipeline-waterfielddev.s3.amazonaws.com
         #   Prefix: !Ref AWS::StackName
-        # Aliases:
-        # - !Ref AppUrl
+        Aliases:
+        - !Ref AppUrl
         DefaultCacheBehavior:
           AllowedMethods:
           # - DELETE
@@ -140,26 +140,26 @@ Resources:
         - Key: Environment
           Value: !Ref Environment
 
-  # WebAppDns:
-  #   Type: AWS::Route53::RecordSetGroup
-  #   Properties:
-  #     HostedZoneName: !Sub ${BaseUrl}.
-  #     Comment: IP4 & IP6 alias targeted to CloudFront Distribution.
-  #     RecordSets:
-  #     - Name: !Ref AppUrl
-  #       Type: A
-  #       AliasTarget:
-  #         HostedZoneId: Z2FDTNDATAQYW2
-  #         DNSName: !GetAtt 
-  #           - AppDistribution
-  #           - DomainName
-  #     - Name: !Ref AppUrl
-  #       Type: AAAA
-  #       AliasTarget:
-  #         HostedZoneId: Z2FDTNDATAQYW2
-  #         DNSName: !GetAtt 
-  #           - AppDistribution
-  #           - DomainName
+  WebAppDns:
+    Type: AWS::Route53::RecordSetGroup
+    Properties:
+      HostedZoneName: !Sub ${BaseUrl}.
+      Comment: IP4 & IP6 alias targeted to CloudFront Distribution.
+      RecordSets:
+      - Name: !Ref AppUrl
+        Type: A
+        AliasTarget:
+          HostedZoneId: Z2FDTNDATAQYW2
+          DNSName: !GetAtt 
+            - AppDistribution
+            - DomainName
+      - Name: !Ref AppUrl
+        Type: AAAA
+        AliasTarget:
+          HostedZoneId: Z2FDTNDATAQYW2
+          DNSName: !GetAtt 
+            - AppDistribution
+            - DomainName
 
 #End Web App Section
 
