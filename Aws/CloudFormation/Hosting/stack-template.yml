@@ -22,9 +22,9 @@ Parameters:
     Type: String
     Default: ivan.bliskavka.com
 
-  # AcmCertArn:
-  #   Type: String
-  #   Default: arn:aws:acm:us-east-1:847765041971:certificate/547c93c7-119a-46a8-bfb3-5658f9aa1087
+  AcmCertArn:
+    Type: String
+    Default: arn:aws:acm:us-east-1:857240696749:certificate/4cabb1e7-2422-4f2d-b1cc-32c82378fff7
 
 Resources:
 
@@ -127,9 +127,9 @@ Resources:
         #     RestrictionType: whitelist
         #     Locations:
         #     - US
-        # ViewerCertificate:
-        #   AcmCertificateArn: !Ref AcmCertArn
-        #   SslSupportMethod: sni-only
+        ViewerCertificate:
+          AcmCertificateArn: !Ref AcmCertArn
+          SslSupportMethod: sni-only
       Tags: 
         - Key: Name
           Value: !Sub ${AWS::StackName}-distro
