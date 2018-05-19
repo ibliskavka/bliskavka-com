@@ -32,7 +32,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/js/jquery-1.7.2.min.js",
+              "node_modules/jquery/jquery.min.js",
               "src/assets/js/jquery.transit.js",
               "src/assets/js/jquery.mousewheel.js",
               "src/assets/js/jquery.scrollTo.js",

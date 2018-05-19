@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --aot && aws s3 sync dist/bliskavka-com s3://bliskavka-com-stack-app && aws cloudfront create-invalidation --distribution-id EJYVKR1H3HVJ1 --paths /"
+    "deploy": "ng build --prod --aot && aws s3 sync dist/bliskavka-com s3://bliskavka-com-stack-app && aws cloudfront create-invalidation --distribution-id EJYVKR1H3HVJ1 --paths /"
   },
   "private": true,
   "dependencies": {
@@ -24,7 +24,7 @@
     "bootstrap": "^3.3.6",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
-    "jquery": "^1.7.2",
+    "jquery": "^1.9.1",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
