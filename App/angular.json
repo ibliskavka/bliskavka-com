@@ -26,20 +26,13 @@
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
-              "src/assets/css/prettify.css",
-              "src/assets/css/metro.css",
-              "src/assets/css/site.css",
+              "src/metro.css",
               "src/styles.css"
             ],
             "scripts": [
               "node_modules/jquery/jquery.min.js",
-              "src/assets/js/jquery.transit.js",
-              "src/assets/js/jquery.mousewheel.js",
-              "src/assets/js/jquery.scrollTo.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/assets/js/prettify.js",
-              "src/assets/js/metro.js",
-              "src/assets/js/site.js"
+              "src/metro.js"
             ]
           },
           "configurations": {
