@@ -1,9 +1,11 @@
 {
-    "title" : "Vehicle Screen Savers",
-    "ms-ad-key" : "efda90e2-310c-4dff-885a-ca9c1433f73e",
-    "ms-ad-a" : 11664854,
-    "ms-ad-b" : 11664854,
-    "duplex-ad-key" : "2a42c285-2dab-4957-8a09-45fa08f4651e",
-    "duplex-ad-a" : 211275,
-    "duplex-ad-b" : 211275
+    "Title"             : "Vehicle Screen Savers",
+    "MsAdEnabled"       : "true",
+    "MsAdKey"           : "efda90e2-310c-4dff-885a-ca9c1433f73e",
+    "MsAdIdA"           : "11664854",
+    "MsAdIdB"           : "11664854",
+    "DuplexAdEnabled"   : "true",
+    "DuplexAdKey"       : "2a42c285-2dab-4957-8a09-45fa08f4651e",
+    "DuplexAdA"         : "211275",
+    "DuplexAdB"         : "211275"
 }
