@@ -1,9 +1,11 @@
 {
-    "title" : "Screen Saver Gallery",
-    "ms-ad-key" : "2f33dc5d-dc1c-4b00-9b1c-977cf7aeb370",
-    "ms-ad-a" : 11655245,
-    "ms-ad-b" : 11655245,
-    "duplex-ad-key" : "4310e056-3481-4a56-a8cf-f2fc4e0916d0",
-    "duplex-ad-a" : 211247,
-    "duplex-ad-b" : 211247
+    "Title"             : "Screen Saver Gallery",
+    "MsAdEnabled"       : "true",
+    "MsAdKey"           : "2f33dc5d-dc1c-4b00-9b1c-977cf7aeb370",
+    "MsAdIdA"           : "11655245",
+    "MsAdIdB"           : "11655245",
+    "DuplexAdEnabled"   : "true",
+    "DuplexAdKey"       : "4310e056-3481-4a56-a8cf-f2fc4e0916d0",
+    "DuplexAdA"         : "211247",
+    "DuplexAdB"         : "211247"
 }
