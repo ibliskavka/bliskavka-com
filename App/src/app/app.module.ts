@@ -8,6 +8,7 @@ import { PagePrivacyComponent } from './components/page-privacy/page-privacy.com
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { SectionProjectsComponent } from './components/section-projects/section-projects.component';
 import { SectionSocialComponent } from './components/section-social/section-social.component';
+import { PageShareComponent } from './components/page-share/page-share.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SectionSocialComponent } from './components/section-social/section-soci
     PageHomeComponent,
     PagePrivacyComponent,
     SectionProjectsComponent,
-    SectionSocialComponent
+    SectionSocialComponent,
+    PageShareComponent
   ],
   imports: [
     BrowserModule,
