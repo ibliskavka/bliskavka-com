@@ -1,6 +1,7 @@
 {
     "Title"             : "Screen Saver Gallery",
     "AdRefreshSeconds"  : 90,
+    "AdFreeDaysOnShare" : 4,
     "MsAdEnabled"       : "true",
     "MsAdKey"           : "2f33dc5d-dc1c-4b00-9b1c-977cf7aeb370",
     "MsAdIdA"           : "11655245",
