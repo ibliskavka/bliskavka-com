@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { IconTileComponent } from './components/icon-tile/icon-tile.component';
@@ -9,6 +9,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { SectionProjectsComponent } from './components/section-projects/section-projects.component';
 import { SectionSocialComponent } from './components/section-social/section-social.component';
 import { PageShareComponent } from './components/page-share/page-share.component';
+import { MonitoringErrorHandler } from '../shared/monitoring-error-handler';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,12 @@ import { PageShareComponent } from './components/page-share/page-share.component
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: ErrorHandler,
+      useClass: MonitoringErrorHandler
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
