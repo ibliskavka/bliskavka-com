@@ -1,7 +1,7 @@
 {
     "Title"             : "Screen Saver Gallery",
     "AdRefreshSeconds"  : 90,
-    "AdFreeDaysOnShare" : 4,
+    "AdFreeDaysOnShare" : 2,
     "MsAdEnabled"       : "true",
     "MsAdKey"           : "2f33dc5d-dc1c-4b00-9b1c-977cf7aeb370",
     "MsAdIdA"           : "11655245",
@@ -9,5 +9,5 @@
     "DuplexAdEnabled"   : "true",
     "DuplexAdKey"       : "4310e056-3481-4a56-a8cf-f2fc4e0916d0",
     "DuplexAdA"         : "211431",
-    "DuplexAdB"         : "211435"
+    "DuplexAdB"         : "211431"
 }

@@ -10,6 +10,7 @@ import { SectionProjectsComponent } from './components/section-projects/section-
 import { SectionSocialComponent } from './components/section-social/section-social.component';
 import { PageShareComponent } from './components/page-share/page-share.component';
 import { MonitoringErrorHandler } from '../shared/monitoring-error-handler';
+import { MonitoringService } from './monitoring.service';
 
 @NgModule({
   declarations: [
