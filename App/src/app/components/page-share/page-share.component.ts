@@ -39,6 +39,11 @@ export class PageShareComponent implements OnInit {
             this.appTagline = '35 categories of the best vehicle photos on the internet!';
             this.appLink = 'https://www.microsoft.com/store/apps/9PNNL64P97L9';
             break;
+          case 'adorable':
+            this.appTitle = 'Adorable Screen Savers';
+            this.appTagline = '20+ categories of the most adorable photos on the internet!';
+            this.appLink = 'https://www.microsoft.com/store/apps/9pffq1hcqm81';
+            break;
           default:
             this.router.navigate(['/share/ssg/31dqQSo.jpg']);
         }
