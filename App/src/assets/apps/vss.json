@@ -6,7 +6,7 @@
     "MsAdKey"           : "efda90e2-310c-4dff-885a-ca9c1433f73e",
     "MsAdIdA"           : "11664854",
     "MsAdIdB"           : "11664854",
-    "DuplexAdEnabled"   : "true",
+    "DuplexAdEnabled"   : "false",
     "DuplexAdKey"       : "2a42c285-2dab-4957-8a09-45fa08f4651e",
     "DuplexAdA"         : "211275",
     "DuplexAdB"         : "211275"

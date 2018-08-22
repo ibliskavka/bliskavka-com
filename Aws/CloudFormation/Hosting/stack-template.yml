@@ -30,14 +30,6 @@ Resources:
 
 #Start Web App Section
 
-  # CleanupBucketOnDelete:
-  #   Type: Custom::cleanupbucket
-  #   Properties:
-  #     ServiceToken: !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:pipeline-lambda-helpers-dev-cfn-delete-bucket-contents
-  #     BucketName: !Sub ${AWS::StackName}-app
-  #     Region: !Ref AWS::Region
-  #   DependsOn: AppBucket
-
   AppBucket:
     Type: AWS::S3::Bucket
     Properties:
@@ -123,11 +115,6 @@ Resources:
               Forward: none
           ViewerProtocolPolicy: redirect-to-https
         PriceClass: PriceClass_100
-        # Restrictions:
-        #   GeoRestriction:
-        #     RestrictionType: whitelist
-        #     Locations:
-        #     - US
         ViewerCertificate:
           AcmCertificateArn: !Ref AcmCertArn
           SslSupportMethod: sni-only
@@ -175,7 +162,42 @@ Resources:
           DNSName: !GetAtt 
             - AppDistribution
             - DomainName
-            
+
+  #until we get our own site :) (can i bind 2 certs and urls to same distro or do i need another?)
+  # SecondaryDns:
+  #   Type: AWS::Route53::RecordSetGroup
+  #   Properties:
+  #     HostedZoneName: liandrasoftworks.com.
+  #     Comment: IP4 & IP6 alias targeted to CloudFront Distribution.
+  #     RecordSets:
+  #     - Name: www.liandrasoftworks.com
+  #       Type: A
+  #       AliasTarget:
+  #         HostedZoneId: Z2FDTNDATAQYW2
+  #         DNSName: !GetAtt 
+  #           - AppDistribution
+  #           - DomainName
+  #     - Name: www.liandrasoftworks.com
+  #       Type: AAAA
+  #       AliasTarget:
+  #         HostedZoneId: Z2FDTNDATAQYW2
+  #         DNSName: !GetAtt 
+  #           - AppDistribution
+  #           - DomainName
+  #     - Name: liandrasoftworks.com
+  #       Type: A
+  #       AliasTarget:
+  #         HostedZoneId: Z2FDTNDATAQYW2
+  #         DNSName: !GetAtt 
+  #           - AppDistribution
+  #           - DomainName
+  #     - Name: liandrasoftworks.com
+  #       Type: AAAA
+  #       AliasTarget:
+  #         HostedZoneId: Z2FDTNDATAQYW2
+  #         DNSName: !GetAtt 
+  #           - AppDistribution
+  #           - DomainName
 
 #End Web App Section
 
