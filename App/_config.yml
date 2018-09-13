@@ -75,6 +75,31 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: hueman
 
+theme_config:
+  customize:
+    social_links: # for more icons, please see http://fontawesome.io/icons/#brand
+      linkedin: https://www.linkedin.com/in/ibliskavka
+      twitter: http://twitter.com/ibliskavka
+      youtube: https://www.youtube.com/user/ibliskavka
+      facebook: https://www.facebook.com/ivan.bliskavka.5
+      github: https://github.com/ibliskavka
+  search:
+    insight: true
+  comment:
+    disqus: bliskavka
+    facebook: true
+  plugins:
+    google_analytics: UA-75853577-1
+  miscellaneous:
+    open_graph: # see http://ogp.me
+      fb_app_id:
+      fb_admins:
+      twitter_id: ibliskavka
+      google_plus:
+    links:
+      Screen Saver Gallery: https://www.microsoft.com/en-us/store/apps/screen-saver-gallery/9nblggh5j8tx
+
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
