@@ -61,6 +61,6 @@ After studying AWS I saw some excellent cost optimization opportunities that als
 
 ## Conclusion
 
-Based on my experience with my modestly successful app, this is what I consider important. My app does not change lives or cure cancer but it provides enough value to people for them to leave excellent reviews. It works quite well on Xbox and I like to leave it running along with Pandora or an audio book.
+Based on my experience with my modestly successful app, this is what I consider important. My app does not change lives or cure cancer but it provides enough value to people for them to leave excellent reviews. It works quite well on XBox and I like to leave it running along with Pandora or an audio book.
 
 Check out [Screen Saver Gallery](https://www.microsoft.com/en-us/store/apps/screen-saver-gallery/9nblggh5j8tx "Screen Saver Gallery Store Link") in the Windows Store.

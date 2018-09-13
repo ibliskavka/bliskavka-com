@@ -4,7 +4,6 @@ date: 2017-11-08 09:45:56
 tags:
 - Career
 - Writing
-thumbnail: /images/Video-512x512.png
 ---
 
 My friend asked me to help her with her resume, so I decided to make a video of the process.

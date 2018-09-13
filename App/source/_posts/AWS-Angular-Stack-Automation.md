@@ -6,7 +6,6 @@ tags:
 - CloudFormation
 - Angular
 - DevOps
-thumbnail: /images/Angular-512x512.png
 ---
 
 > Effort is not work. Carrying a piano up the stairs is the same amount of work as using an elevator, but tremendously more effort.
