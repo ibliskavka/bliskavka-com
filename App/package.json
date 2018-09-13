@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "hexo server",
-    "deploy": "hexo generate"
+    "deploy": "hexo generate && aws s3 sync public s3://bliskavka-com-stack-app && aws cloudfront create-invalidation --distribution-id EJYVKR1H3HVJ1 --paths /"
   },
   "dependencies": {
     "hexo": "^3.7.0",
