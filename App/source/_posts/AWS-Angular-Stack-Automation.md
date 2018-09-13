@@ -1,6 +1,8 @@
 ---
 title: AWS Angular Stack Automation
 date: 2018-08-16 02:56:28
+categories:
+- DevOps
 tags:
 - AWS
 - CloudFormation

@@ -1,6 +1,8 @@
 ---
 title: How I Built a $700/mo Income Stream
 date: 2018-09-09 05:29:15
+categories:
+- Entrepreneurship
 tags:
 - AWS
 - Screen Saver Gallery

@@ -1,6 +1,8 @@
 ---
 title: Resume Writing Tips
 date: 2017-11-08 09:45:56
+categories:
+- Career
 tags:
 - Career
 - Writing

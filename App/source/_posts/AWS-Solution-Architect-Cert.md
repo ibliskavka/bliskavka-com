@@ -1,6 +1,8 @@
 ---
 title: AWS Solution Architect Cert
 date: 2018-02-15 17:49:36
+categories:
+- Career
 tags:
 - AWS
 - Certification
