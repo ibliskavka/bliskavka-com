@@ -65,12 +65,6 @@ Resources:
                 - /*
       Bucket: !Ref AppBucket
 
-  OriginAccessIdentity:
-    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
-    Properties:
-      CloudFrontOriginAccessIdentityConfig:
-        Comment: Access identity between CloudFront and S3 bucket
-
   #https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionConfig.html
   #https://keita.blog/2015/11/24/hosting-a-single-page-app-on-s3-with-proper-urls/
   #https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html
@@ -79,10 +73,10 @@ Resources:
     Properties:
       DistributionConfig: 
         Origins:
-        - DomainName: !Sub ${AppBucket}.s3.amazonaws.com
-          Id: myS3Origin
-          S3OriginConfig:
-            OriginAccessIdentity: !Sub origin-access-identity/cloudfront/${OriginAccessIdentity}
+        - DomainName: !Sub ${AWS::StackName}-app.s3-website-${AWS::Region}.amazonaws.com
+          Id: myS3WebsiteOrigin
+          CustomOriginConfig:
+            OriginProtocolPolicy: http-only
         Enabled: 'true'
         Comment: CloudFront distribution for Angular App
         CustomErrorResponses:
@@ -108,7 +102,7 @@ Resources:
           # - POST
           # - PUT
           Compress: 'true'
-          TargetOriginId: myS3Origin
+          TargetOriginId: myS3WebsiteOrigin
           ForwardedValues:
             QueryString: 'false'
             Cookies:
