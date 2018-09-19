@@ -4,7 +4,7 @@
 
 # Site
 title: Ivan Bliskavka
-subtitle: Bugs, Snacks and Rock n Roll
+subtitle: Digital Inventor
 description: Notebook of tips, tricks and walkthroughs I create for personal reference. If you have questions feel free to reach out in the comments or social media.
 keywords:
 author: Ivan Bliskavka
@@ -83,7 +83,7 @@ theme_config:
     About: /About
   customize:
     logo:
-      width: 250
+      width: 165
       height: 60
       url: /images/logo-header.png
     theme_color: '#01a31c'
