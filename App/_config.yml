@@ -15,7 +15,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://bliskavka.com
 root: /
-permalink: :year/:month/:day/:title/index.html
+permalink: :year/:month/:day/:title
 permalink_defaults:
 
 # Directory
@@ -80,7 +80,7 @@ theme_config:
     Home: /
     # Delete this row if you don't want categories in your header nav bar
     # Categories:
-    About: /About/index.html
+    About: /About
   customize:
     logo:
       width: 250
