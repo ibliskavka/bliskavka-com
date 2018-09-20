@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<sample>
+  <galleries>
+    <gallery>
+      <url>http://mimmosantorofotografie.piwigo.com</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/mimmosantorofotografie.jpg</thumbnail>
+      <name>Mimmo Santoro Fotografie</name>
+    </gallery>
+    <gallery>
+      <url>http://mariadelmar38.piwigo.com</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/mariadelmar38.jpg</thumbnail>
+      <name>Photographies - Promesses des Jours</name>
+    </gallery>
+    <gallery>
+      <url>http://lyon-photo-gone.piwigo.com</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/lyon-photo-gone.jpg</thumbnail>
+      <name>Lyon-Photo-Gone</name>
+    </gallery>
+    <gallery>
+      <url>http://kphotographie.piwigo.com</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/kphotographie.jpg</thumbnail>
+      <name>K Photographie</name>
+    </gallery>
+    <!--<gallery>
+      <url>http://ziphius.piwigo.com</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/ziphius.jpg</thumbnail>
+      <name>Ziphius</name>
+    </gallery>-->
+    <gallery>
+      <url>http://milophotographie.fr</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/milophotographie.jpg</thumbnail>
+      <name>Milo Photographie</name>
+    </gallery>
+    <gallery>
+      <url>http://alfred.piwigo.com</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/alfred.jpg</thumbnail>
+      <name>Alfred</name>
+    </gallery>
+    <gallery>
+      <url>http://elisard.piwigo.com</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/elisard.jpg</thumbnail>
+      <name>Elisard</name>
+    </gallery>
+    <gallery>
+      <url>http://geoffroysudre.piwigo.com</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/geoffroysudre.jpg</thumbnail>
+      <name>Geoff Roysudre</name>
+    </gallery>
+    <gallery>
+      <url>http://minaris.fr</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/minaris.jpg</thumbnail>
+      <name>Minaris</name>
+    </gallery>
+    <gallery>
+      <url>http://chrisphotos.piwigo.com</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/chrisphotos.jpg</thumbnail>
+      <name>Chris Photos</name>
+    </gallery>
+    <gallery>
+      <url>http://jpverrue.fr</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/jpverrue.jpg</thumbnail>
+      <name>JP Verrue</name>
+    </gallery>
+    <gallery>
+      <url>http://macronature.piwigo.com</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/macronature.jpg</thumbnail>
+      <name>Macro Nature</name>
+    </gallery>
+    <gallery>
+      <url>http://peterplan.piwigo.com</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/peterplan.jpg</thumbnail>
+      <name>Peter Plan</name>
+    </gallery>
+    <gallery>
+      <url>http://feelihoe.piwigo.com</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/feelihoe.jpg</thumbnail>
+      <name>Feelihoe</name>
+    </gallery>
+    <gallery>
+      <url>http://lesmonier.piwigo.com</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/lesmonier.jpg</thumbnail>
+      <name>LesMonier</name>
+    </gallery>
+    <gallery>
+      <url>http://lespaysagesdefka.piwigo.com</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/lespaysagesdefka.jpg</thumbnail>
+      <name>Les Paysages d'Efka</name>
+    </gallery>
+    <gallery>
+      <url>http://lucdujardin.net</url>
+      <thumbnail>http://piwigo.com/images/featured_galleries/lucdujardin.jpg</thumbnail>
+      <name>Luc Dujardin</name>
+    </gallery>
+  </galleries>
+</sample>
