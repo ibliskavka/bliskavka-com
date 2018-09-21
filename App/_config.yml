@@ -82,10 +82,6 @@ theme_config:
     # Categories:
     About: /About
   customize:
-    logo:
-      width: 165
-      height: 60
-      url: /images/logo-header.png
     theme_color: '#01a31c'
     thumbnail: false
     social_links: # for more icons, please see http://fontawesome.io/icons/#brand
