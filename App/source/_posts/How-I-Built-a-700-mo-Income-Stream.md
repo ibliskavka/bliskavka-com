@@ -12,7 +12,7 @@ tags:
 
 First and foremost – there are few things more awesome than getting a direct deposit every month for work you did years ago. What was once modest beer money at $50 a month is now almost serious alcoholic money at $700 a month!
 
-How did I do it? Well, hard work for one. You must account for the fact that I have 10 years of software development experience and was able to put together the bulk of the app over a weekend. Don’t let that scare you off, these tips are not technical apply to anything from an app to a blog.
+How did I do it? Well, hard work for one. You must account for the fact that I have 10 years of software development experience and was able to put together the bulk of the app over a weekend. Don’t let that scare you off, these tips are not technical and apply to anything from an app to a blog.
 
 <!-- more -->
 
