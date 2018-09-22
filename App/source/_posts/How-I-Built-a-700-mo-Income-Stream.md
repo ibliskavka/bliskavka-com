@@ -1,6 +1,6 @@
 ---
 title: How I Built a $700/mo Income Stream
-date: 2018-09-09 05:29:15
+date: 2018-09-22 05:29:15
 categories:
 - Entrepreneurship
 tags:
@@ -18,40 +18,40 @@ How did I do it? Well, hard work for one. You must account for the fact that I h
 
 ## Optimize for Organic Keyword Traffic
 
-I wanted to build a screen saver for the Windows 10 store but there was one problem – there was no method for starting store app after the computer has been idle.
+I wanted to build a screen saver for the Windows 10 store but there was one problem – there was no method for auto-starting a store app after the computer has been idle.
 
 Screensaver is a very common keyword though and I really wanted to get that organic traffic. People love to see pretty pictures and will search for it. Additionally, less experienced users refer to desktop backgrounds as screensavers – so the word has some flux. I also wanted to indicate that the app uses photos so I named my app: Screen Saver Gallery.
 
 Then name felt awkward at first – but after some time it kind of rolls of the tongue (at least for me).
 
-The app is currently being downloaded more than 6,000 a month organically and I attribute that primarily to the name.
+The app is currently being downloaded over 6,000 a month organically and I attribute that primarily to the name.
 
 ## Ask for Reviews
 
 I use social trust daily. If other people think a product is great – I am much more likely to consider it.
 
-Ask your users for reviews – but only after they have had a chance to use the app. If you prompt them immediately they will give you 1-3 stars and say something like “geez, let me use it first”. 
+Ask your users for reviews – but only after they have had a chance to use the app. If you prompt them immediately they will give you 1-3 stars and say something like “Geez, let me use it first”. 
 
-I set my prompt to 7 days. I assume that they like it well enough to use it for 7 days, so I may get better reviews. Don’t nag – I allow users to snooze the review reminder for 30 days or forever.
+I set my prompt to 7 days. I assume that if they use the app for 7 days they are more likely to give me a good review. Don’t nag – I allow users to snooze the review reminder for 30 days or forever.
 
-Of course you will always get people that dislike your app and post a bad review without the prompt. There is not much you can do about that except:
+Of course you will always get people that dislike your app and post a bad review without=being prompted. There is not much you can do about that except:
 
 1.	Fix any reported issues and respond to their review
 2.	If they are complaining about a missing feature that you never implemented or advertised you may point that out so that the next user can see your response.
-3.	Try to be honest in your app description – you don’t want to mislead someone into thinking you are providing something you are not. (__Screen Saver__ Gallery falls into this a bit but I declare in my app description that the app does not auto-start)
+3.	Try to be honest in your app description – you don’t want to mislead someone into thinking you are providing something you are not. (__Screen Saver__ Gallery falls into this a bit but I am honest in my description)
 4.	Don’t sweat the trolls.
 
 ## Don’t Be A Leaky Bucket
 
-Take crash reports & hangs seriously. Implement remote metrics and instrumentation like Application Insights or HockeyApp. Monitor and fix bugs. Make sure your API is 100% reliable or fails gracefully.
+Take crash reports & hangs seriously. Implement remote metrics and instrumentation like Application Insights, HockeyApp or Google Analytics. Monitor and fix bugs. Make sure your app is near 100% reliable or fails gracefully.
 
 For a while, I had a leaky bucket. I would acquire users but my total engagement hours would stay the same. I spent a few weeks rewriting my app to use AWS S3 with CloudFront & Lambda to improve my latency and availability. My crash rate came down 75% and my usage started to grow consistently.
 
-Within the app itself I added error checks for user inputs and error handlers with meaningful messages. If the app cannot download content – its just about useless. Write code to try and determine the source of the problem, log it, and indicate to the user what is going on in a friendly, meaningful way.
+Within the app itself I added error checks for user inputs and error handlers with meaningful messages. If the app cannot download photos – its just about useless. Write code to try and determine the source of the problem, log it, and indicate to the user what is going on in a friendly, meaningful way.
 
 ## Look for Recurring Revenues
 
-I am a big fan of paying for software once; I would prefer that for my app. Initially I had a non-expiring addon that removed advertising. I quickly realized though that I had monthly costs in time and money to provide quality content. I have hosting costs and I monitor image sources daily for poor quality or inappropriate content.
+I am a big fan of paying for software once; I would prefer that for my app. Initially I had a non-expiring addon that removed advertising. I quickly realized though that I had monthly time & money costs to provide quality content. I have hosting costs and I monitor image sources daily for poor quality or inappropriate content.
 
 With that in mind I created 2 addons that remove the advertising: 6 months and 12 months. I have plans to add an auto-renewing subscription that people can opt into.
 
