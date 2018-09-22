@@ -1,6 +1,6 @@
 ---
 title: How I Built a $700/mo Income Stream
-date: 2018-09-22 05:29:15
+date: 2018-10-01 05:29:15
 categories:
 - Entrepreneurship
 tags:
