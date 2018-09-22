@@ -37,6 +37,29 @@ Resources:
       AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html
+        RoutingRules:
+          - RoutingRuleCondition:
+              KeyPrefixEquals: piwigo/privacypolicy.html
+            RedirectRule:
+              HttpRedirectCode: 301
+              HostName: !Sub ${BaseUrl}
+              Protocol: https
+              ReplaceKeyWith: Piwigo-Gallery-Privacy-Policy/index.html
+          - RoutingRuleCondition:
+              KeyPrefixEquals: NormalDayInRussia/privacypolicy.html
+            RedirectRule:
+              HttpRedirectCode: 301
+              HostName: !Sub ${BaseUrl}
+              Protocol: https
+              ReplaceKeyWith: Normal-Day-In-Russia-Privacy-Policy/index.html
+          - RoutingRuleCondition:
+              KeyPrefixEquals: screensavergallery/privacy.html
+            RedirectRule:
+              HttpRedirectCode: 301
+              HostName: !Sub ${BaseUrl}
+              Protocol: https
+              ReplaceKeyPrefixWith: Screen-Saver-Gallery-Privacy-Policy/index.html
+
       Tags:
         - Key: Name
           Value: !Sub ${AWS::StackName}-app
