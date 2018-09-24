@@ -1,6 +1,6 @@
 ---
 title: How I Built a $700/mo Income Stream
-date: 2018-10-01 05:29:15
+date: 2018-09-24 08:29:15
 categories:
 - Entrepreneurship
 tags:
@@ -34,7 +34,7 @@ Ask your users for reviews – but only after they have had a chance to use the 
 
 I set my prompt to 7 days. I assume that if they use the app for 7 days they are more likely to give me a good review. Don’t nag – I allow users to snooze the review reminder for 30 days or forever.
 
-Of course you will always get people that dislike your app and post a bad review without=being prompted. There is not much you can do about that except:
+Of course you will always get people that dislike your app and post a bad review without being prompted. There is not much you can do about that except:
 
 1.	Fix any reported issues and respond to their review
 2.	If they are complaining about a missing feature that you never implemented or advertised you may point that out so that the next user can see your response.
@@ -51,18 +51,18 @@ Within the app itself I added error checks for user inputs and error handlers wi
 
 ## Look for Recurring Revenues
 
-I am a big fan of paying for software once; I would prefer that for my app. Initially I had a non-expiring addon that removed advertising. I quickly realized though that I had monthly time & money costs to provide quality content. I have hosting costs and I monitor image sources daily for poor quality or inappropriate content.
+I am a big fan of paying for software once; I would prefer that for my app. Initially I had a non-expiring add-on that removed advertising. I quickly realized though that I had monthly time & money costs to provide quality content. I have hosting costs and I monitor image sources daily for poor quality or inappropriate content.
 
-With that in mind I created 2 addons that remove the advertising: 6 months and 12 months. I have plans to add an auto-renewing subscription that people can opt into.
+With that in mind I created 2 add-ons that remove the advertising: 6 months and 12 months. I have plans to add an auto-renewing subscription that people can opt into.
 
 ## Optimize Your Costs
 
-I reduced my server costs from $40/mo to about $4/mo this summer. My costs for running Web API on Azure was about $40/month on a single node. This means that I was incurring latency costs for global users and if there was a problem with the node my app wouldnt work.
+I reduced my server costs from $40/mo to about $4/mo this summer. My costs for running Web API on Azure was about $40/month on a single server. This means that I was incurring latency costs for global users and if there was a problem with the server my app wouldn't work.
 
-After studying AWS I saw some excellent cost optimization opportunities that also improve API performance. Most of my content is static so I created a public S3 bucket with a CloudFront distribution. I have a Lambda function that runs throughout the day to refresh each content source once ever 24 hours. CloudFront caches my content at edge locations throughout the world so I get much better latency. Additional dynamic APIs are handled using Lambda and API Gateway.
+After studying AWS I saw some excellent cost optimization opportunities that also improved API performance. Most of my content is static so I created a public S3 bucket with a CloudFront distribution. I have a Lambda function that runs throughout the day to refresh each content source once ever 24 hours. CloudFront caches my content at edge locations throughout the world so I get much better latency. Additional dynamic APIs are handled using Lambda and API Gateway.
 
 ## Conclusion
 
-Based on my experience with my modestly successful app, this is what I consider important. My app does not change lives or cure cancer but it provides enough value to people for them to leave excellent reviews. It works quite well on XBox and I like to leave it running along with Pandora or an audio book.
+Based on my experience with my modestly successful app, the above is what I consider important. My app does not change lives or cure cancer but it provides enough value to people for them to leave excellent reviews. It works quite well on XBox and I like to leave it running along with Pandora or an audio book.
 
 Check out [Screen Saver Gallery](https://www.microsoft.com/en-us/store/apps/screen-saver-gallery/9nblggh5j8tx "Screen Saver Gallery Store Link") in the Windows Store.
