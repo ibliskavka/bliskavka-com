@@ -7,6 +7,14 @@ Description: >
 
 Parameters:
 
+  Client:
+    Type: String
+    Default: Undefined
+
+  Project:
+    Type: String
+    Default: Undefined
+
   Environment:
     Type: String
     Default: Development
@@ -64,9 +72,9 @@ Resources:
         - Key: Name
           Value: !Sub ${AWS::StackName}-app
         - Key: Client
-          Value: NYC
+          Value: !Ref Client
         - Key: Project
-          Value: Roundtable
+          Value: !Ref Project
         - Key: Environment
           Value: !Ref Environment
 
@@ -139,9 +147,9 @@ Resources:
         - Key: Name
           Value: !Sub ${AWS::StackName}-distro
         - Key: Client
-          Value: Bliskavka
+          Value: !Ref Client
         - Key: Project
-          Value: Home
+          Value: !Ref Project
         - Key: Environment
           Value: !Ref Environment
 
