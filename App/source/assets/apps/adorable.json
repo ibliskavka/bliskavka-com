@@ -1,6 +1,6 @@
 {
     "Title"             : "Adorable Screen Savers",
-    "AdRefreshSeconds"  : 300,
+    "AdRefreshSeconds"  : 150,
     "AdFreeDaysOnShare" : 1,
     "MsAdEnabled"       : "true",
     "MsAdKey"           : "b794abd0-3b1f-47c4-b267-f19dd7d8a443",
