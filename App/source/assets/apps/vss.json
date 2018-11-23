@@ -1,6 +1,6 @@
 {
     "Title"             : "Vehicle Screen Savers",
-    "AdRefreshSeconds"  : 150,
+    "AdRefreshSeconds"  : 60,
     "AdFreeDaysOnShare" : 1,
     "MsAdEnabled"       : "true",
     "MsAdKey"           : "efda90e2-310c-4dff-885a-ca9c1433f73e",
