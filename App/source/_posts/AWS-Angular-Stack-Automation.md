@@ -23,6 +23,7 @@ Your focus should be on delivering quality code, not the intricacies of deployme
 Until recently I worked in a SOX compliant on-premise IIS shop. SOX regulations are there for good reason but they are a huge burden if every deploy and config change is done and documented manually. Our deployments were usually an all-hands-on-deck affair, and scheduling an automated deploy seamed like a pipe dream. It once took infrastructure _months_ to enable SSL on our site! Having moved to a cloud-first shop it all just seams like so much unnecessary _effort_.
 
 ## Prerequisites
+
 * NodeJS & Angular CLI
 * AWS CLI Installed & Credentials Configured
 * Route53 Domain & Amazon Certificate Manager cert for the domain
@@ -45,10 +46,10 @@ https://github.com/ibliskavka/aws-angular-stack-starter/blob/master/stack/templa
 
 Once you download the template you can install it with the following CLI command:
 
-```
-aws cloudformation deploy 
-    --template-file template.yml 
-    --stack-name aws-ng-demo 
+```bash
+aws cloudformation deploy \
+    --template-file template.yml \
+    --stack-name aws-ng-demo \
     --parameter-overrides BaseUrl=*** AppUrl=*** AcmCertArn=***
 ```
 
@@ -66,9 +67,9 @@ Successfully created/updated stack - aws-ng-demo
 
 Open up the web console to see your stack outputs or run the following command:
 
-```
-aws cloudformation describe-stacks
-    --stack-name aws-ng-demo 
+```bash
+aws cloudformation describe-stacks \
+    --stack-name aws-ng-demo \
     --query "Stacks[0].Outputs[?OutputKey==`DistributionId` || OutputKey==`AppBucket`]"
 ```
 
@@ -102,7 +103,7 @@ Cleaning everything up is even easier than putting it up. There is no reason to 
 
 The following commands will delete your bucket contents and then delete the stack.
 
-```
+```bash
 aws s3 rm s3://{AppBucket} --recursive
 aws cloudformation delete-stack --stack-name aws-ng-demo
 ```
@@ -110,6 +111,7 @@ aws cloudformation delete-stack --stack-name aws-ng-demo
 _Note: Replace {AppBucket} with your stack output_
 
 ## Conclusion
+
 This may seam like if overkill you only have one toy app. If you are producing a bunch of apps and have multiple environments this becomes an amazing time saver.
 
 If policy states that you cant deploy your own code, your ops guys will love this! Additionally, any infrastructure changes are explicitly documented in your source control.
