@@ -2,7 +2,7 @@
 title: Cold Transfer in AWS Connect Streams
 date: 2019-06-03 12:39:08
 categories:
-- How To
+- HowTo
 tags:
 - AWS
 - Connect
