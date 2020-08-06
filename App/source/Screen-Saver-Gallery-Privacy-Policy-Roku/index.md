@@ -1,6 +1,6 @@
 ---
 title: Screen Saver Gallery Privacy Policy
-date: 2018-09-19 16:55:33
+date: 2020-08-01 18:55:33
 comments: false
 ---
 

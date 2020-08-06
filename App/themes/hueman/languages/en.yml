@@ -1,6 +1,7 @@
 index:
     home: 'Home'
     about: 'About'
+    screen-saver-gallery: 'Screen Saver Gallery'
     search: 'Search'
     archive: 'Archive'
     category: 'Category'
