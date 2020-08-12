@@ -33,6 +33,18 @@ Parameters:
     Type: String
     Default: arn:aws:acm:us-east-1:857240696749:certificate/4cabb1e7-2422-4f2d-b1cc-32c82378fff7
 
+  MinTTL:
+    Type: Number
+    Default: 1800
+
+  DefaultTTL:
+    Type: Number
+    Default: 3600
+
+  MaxTTL:
+    Type: Number
+    Default: 86400
+
 Resources:
 
 #Start Web App Section
@@ -41,7 +53,12 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: !Sub ${AWS::StackName}-app
-      AccessControl: PublicRead
+      AccessControl: Private
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
       WebsiteConfiguration:
         IndexDocument: index.html
         RoutingRules:
@@ -67,8 +84,6 @@ Resources:
               Protocol: https
               ReplaceKeyPrefixWith: Screen-Saver-Gallery-Privacy-Policy/index.html
       Tags:
-        - Key: Name
-          Value: !Sub ${AWS::StackName}-app
         - Key: Client
           Value: !Ref Client
         - Key: Project
@@ -83,28 +98,39 @@ Resources:
         Id: WebAppBucketPolicy
         Version: 2012-10-17
         Statement:
-          - Sid: PublicReadForGetBucketObjects
+          - Sid: "Grant a CloudFront Origin Identity access to support private content"
             Effect: Allow
-            Principal: '*'
-            Action: 's3:GetObject'
-            Resource: !Join 
-              - ''
-              - - 'arn:aws:s3:::'
-                - !Ref AppBucket
-                - /*
+            Principal:
+              CanonicalUser: !GetAtt OriginAccessIdentity.S3CanonicalUserId
+            Action: s3:GetObject
+            Resource: !Sub "${AppBucket.Arn}/*"
       Bucket: !Ref AppBucket
+
+  OriginAccessIdentity:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: !Sub "${Client}, ${Project}, ${Environment}"
 
   AppDistribution:
     Type: AWS::CloudFront::Distribution
     Properties:
       DistributionConfig: 
         Origins:
-        - DomainName: !Sub ${AWS::StackName}-app.s3-website-${AWS::Region}.amazonaws.com
-          Id: myS3WebsiteOrigin
-          CustomOriginConfig:
-            OriginProtocolPolicy: http-only
+        - DomainName: !Sub ${AppBucket}.s3.amazonaws.com
+          Id: myS3Origin
+          S3OriginConfig:
+            OriginAccessIdentity: !Sub origin-access-identity/cloudfront/${OriginAccessIdentity}
         Enabled: 'true'
-        Comment: !Sub "${Project}-${Environment}"
+        Comment: !Sub "CloudFront distribution for ${AppBucket}"
+        CustomErrorResponses:
+          - ErrorCode: 403
+            ResponseCode: 200
+            ResponsePagePath: /index.html
+          - ErrorCachingMinTTL: 5
+            ErrorCode: 404
+            ResponseCode: 200
+            ResponsePagePath: /index.html
         DefaultRootObject: index.html
         Aliases:
         - !Ref AppUrl
@@ -119,15 +145,15 @@ Resources:
             - HEAD
             - OPTIONS
           Compress: 'true'
-          DefaultTTL: 604800    # Week
-          MaxTTL: 2592000       # Month
-          MinTTL: 86400         # Day
-          TargetOriginId: myS3WebsiteOrigin
+          TargetOriginId: myS3Origin
           ForwardedValues:
             QueryString: 'false'
             Cookies:
               Forward: none
           ViewerProtocolPolicy: redirect-to-https
+          DefaultTTL: !Ref DefaultTTL
+          MaxTTL: !Ref MaxTTL
+          MinTTL: !Ref MinTTL
         PriceClass: PriceClass_100
         ViewerCertificate:
           AcmCertificateArn: !Ref AcmCertArn
