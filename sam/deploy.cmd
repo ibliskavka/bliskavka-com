@@ -1,5 +1,5 @@
 aws cloudformation deploy^
-    --template-file ./CloudFormation/hosting.yml^
+    --template-file hosting.yml^
     --stack-name bliskavka-com-stack^
     --tags^
         Client=Bliskavka^
