@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "hexo server",
-    "deploy": "hexo generate && aws s3 sync public s3://bliskavka-com-stack-app --delete --profile lsw && aws cloudfront create-invalidation --distribution-id EJYVKR1H3HVJ1 --paths / --profile lsw --region us-east-1"
+    "deploy": "rimraf public && hexo generate && aws s3 sync public s3://bliskavka-com-stack-app --delete --profile lsw && aws cloudfront create-invalidation --distribution-id EJYVKR1H3HVJ1 --paths / --profile lsw --region us-east-1"
   },
   "dependencies": {
     "hexo": "^3.9.0",
@@ -20,5 +20,8 @@
     "hexo-renderer-marked": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
   }
 }
