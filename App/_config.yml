@@ -17,6 +17,7 @@ url: http://bliskavka.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
+pretty_urls.trailing_index: false
 
 # Directory
 source_dir: source

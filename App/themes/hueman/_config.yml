@@ -1,9 +1,9 @@
 # Menus
-menu:
-    Home: /
+# menu:
+#     Home: /
     # Delete this row if you don't want categories in your header nav bar
-    Categories:
-    About: /about/index.html
+    # Categories:
+    # About: /about/index.html
 
 # Customize
 customize:
@@ -16,13 +16,13 @@ customize:
     sidebar: left # sidebar position, options: left, right
     thumbnail: true # enable posts thumbnail, options: true, false
     favicon: # path to favicon
-    social_links: # for more icons, please see http://fontawesome.io/icons/#brand
-        twitter: /
-        facebook: /
-        google-plus: /
-        github: https://github.com/ppoffice/hexo-theme-hueman
-        weibo: /
-        rss: /
+    # social_links: # for more icons, please see http://fontawesome.io/icons/#brand
+    #     twitter: /
+    #     facebook: /
+    #     google-plus: /
+    #     github: https://github.com/ppoffice/hexo-theme-hueman
+    #     weibo: /
+    #     rss: /
 
 # Widgets
 widgets:
@@ -95,11 +95,11 @@ plugins:
     mathjax: false # options: true, false
 
 # Miscellaneous
-miscellaneous:
-    open_graph: # see http://ogp.me
-        fb_app_id:
-        fb_admins:
-        twitter_id:
-        google_plus:
-    links:
-        Hexo: http://hexo.io
+# miscellaneous:
+#     open_graph: # see http://ogp.me
+#         fb_app_id:
+#         fb_admins:
+#         twitter_id:
+#         google_plus:
+#     links:
+        # Hexo: http://hexo.io

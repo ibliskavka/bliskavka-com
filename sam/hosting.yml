@@ -53,12 +53,7 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: !Sub ${AWS::StackName}-app
-      AccessControl: Private
-      PublicAccessBlockConfiguration:
-        BlockPublicAcls: true
-        BlockPublicPolicy: true
-        IgnorePublicAcls: true
-        RestrictPublicBuckets: true
+      AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html
         RoutingRules:
@@ -98,31 +93,28 @@ Resources:
         Id: WebAppBucketPolicy
         Version: 2012-10-17
         Statement:
-          - Sid: "Grant a CloudFront Origin Identity access to support private content"
+          - Sid: PublicReadForGetBucketObjects
             Effect: Allow
-            Principal:
-              CanonicalUser: !GetAtt OriginAccessIdentity.S3CanonicalUserId
-            Action: s3:GetObject
-            Resource: !Sub "${AppBucket.Arn}/*"
+            Principal: '*'
+            Action: 's3:GetObject'
+            Resource: !Join 
+              - ''
+              - - 'arn:aws:s3:::'
+                - !Ref AppBucket
+                - /*
       Bucket: !Ref AppBucket
-
-  OriginAccessIdentity:
-    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
-    Properties:
-      CloudFrontOriginAccessIdentityConfig:
-        Comment: !Sub "${Client}, ${Project}, ${Environment}"
 
   AppDistribution:
     Type: AWS::CloudFront::Distribution
     Properties:
       DistributionConfig: 
         Origins:
-        - DomainName: !Sub ${AppBucket}.s3.amazonaws.com
-          Id: myS3Origin
-          S3OriginConfig:
-            OriginAccessIdentity: !Sub origin-access-identity/cloudfront/${OriginAccessIdentity}
+        - DomainName: !Sub ${AWS::StackName}-app.s3-website-${AWS::Region}.amazonaws.com
+          Id: myS3WebsiteOrigin
+          CustomOriginConfig:
+            OriginProtocolPolicy: http-only
         Enabled: 'true'
-        Comment: !Sub "CloudFront distribution for ${AppBucket}"
+        Comment: !Sub "s3://${AppBucket}"
         CustomErrorResponses:
           - ErrorCode: 403
             ResponseCode: 200
@@ -145,7 +137,7 @@ Resources:
             - HEAD
             - OPTIONS
           Compress: 'true'
-          TargetOriginId: myS3Origin
+          TargetOriginId: myS3WebsiteOrigin
           ForwardedValues:
             QueryString: 'false'
             Cookies:
