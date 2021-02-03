@@ -1,5 +1,5 @@
 ---
-title: "Amplify + React Build: Uncaught TypeError"
+title: "Amplify + React Build - Uncaught TypeError"
 date: 2021-01-22 18:18:12
 categories:
 - Troubleshooting
