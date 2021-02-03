@@ -6,7 +6,7 @@ categories:
 tags:
 - AWS
 - CloudFormation
-- Devops
+- DevOps
 - AWS SAM CLI
 ---
 
