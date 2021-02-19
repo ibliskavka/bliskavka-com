@@ -13,6 +13,10 @@ Writing CloudFormation or SAM templates without by hand is very powerful, but ca
 
 <!-- more -->
 
+## Update 2/19/2021
+
+Check out [Serverless IDE for VS Code](https://marketplace.visualstudio.com/items?itemName=ThreadHeap.serverless-ide-vscode) it has CFT Linting and Type Checking!!!
+
 ## VSCode CloudFormation Language Support
 
 I develop my CloudFormation templates in Visual Studio Code with the help of the [redhat.vscode-yaml](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) extension.
