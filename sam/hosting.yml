@@ -33,18 +33,6 @@ Parameters:
     Type: String
     Default: arn:aws:acm:us-east-1:857240696749:certificate/4cabb1e7-2422-4f2d-b1cc-32c82378fff7
 
-  MinTTL:
-    Type: Number
-    Default: 1800
-
-  DefaultTTL:
-    Type: Number
-    Default: 3600
-
-  MaxTTL:
-    Type: Number
-    Default: 86400
-
 Resources:
 
 #Start Web App Section
@@ -143,9 +131,9 @@ Resources:
             Cookies:
               Forward: none
           ViewerProtocolPolicy: redirect-to-https
-          DefaultTTL: !Ref DefaultTTL
-          MaxTTL: !Ref MaxTTL
-          MinTTL: !Ref MinTTL
+          DefaultTTL: 300
+          MaxTTL: 360
+          MinTTL: 60
         PriceClass: PriceClass_100
         ViewerCertificate:
           AcmCertificateArn: !Ref AcmCertArn
