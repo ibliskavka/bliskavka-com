@@ -1,5 +1,6 @@
 # http://bliskavka.com
 
-```bash
-npx hexo new post batch-write -s dynamo-db-batch-write
-```
+## Notes
+
+- Run on Windows. Hexo throws error under WSL
+- `npx hexo new post my-post -s my-post-slug`
