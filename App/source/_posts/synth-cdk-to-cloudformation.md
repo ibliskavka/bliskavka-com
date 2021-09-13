@@ -260,4 +260,6 @@ This is a lot of extra work if you are building internal AWS apps, but if you ar
 
 Check out the [GitHub Repo](https://github.com/ibliskavka/synth-cdk-to-cloudformation) for full project setup.
 
-Next Week (9/20/2021): Building Portable CDK apps with AWS Lambda
+__Next Week (9/20/2021)__: Building Portable CDK apps with AWS Lambda
+
+![Me with a stray cat in Greece 2017](cat.png)
