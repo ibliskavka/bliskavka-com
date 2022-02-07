@@ -99,3 +99,5 @@ Not sure what the side-effects of these are, but this produces a simpler templat
 ## Conclusion
 
 This has been very helpful for creating installers that are accessible to non-developers and usable in beginner AWS environments. I hope it save you some head-scratching!
+
+![Me with a stray cat in Greece 2017](cat.jpg)
