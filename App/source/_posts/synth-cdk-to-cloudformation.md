@@ -1,5 +1,5 @@
 ---
-title: Synth CDK app to Portable CloudFormation
+title: Synth CDK app to Portable CloudFormation (obsolete)
 date: 2021-09-13 07:47:58
 categories:
   - HowTo
@@ -10,6 +10,8 @@ tags:
   - Consulting
   - DevOps
 ---
+
+Update 2/7/2022: [Read Synth CDK app to Custom Bucket instead](/2022/02/07/synth-cdk-to-custom-bucket/).
 
 Consulting requires you to work within the client's parameters. Some clients have internal standards, and want you to deliver your white-label CDK app as CloudFormation. Call me old fashioned but...
 
