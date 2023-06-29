@@ -1,6 +1,6 @@
 # Change Log
 
-2023-06-29 - Add sky dive & jasmine-ts video
+2023-06-29 - Add sky dive & jasmine-ts video. Added contact form.
 
 2023-06-22 - Moved cdk related blog posts to liandra softworks blog
 
