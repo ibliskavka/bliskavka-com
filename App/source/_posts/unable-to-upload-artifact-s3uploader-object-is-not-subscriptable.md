@@ -4,16 +4,16 @@ title: >
 
 date: 2020-12-18 10:12:06
 categories:
-- Troubleshooting
+  - Troubleshooting
 tags:
-- AWS
-- CloudFormation
-- AWS SAM CLI
+  - AWS
+  - CloudFormation
+  - AWS SAM CLI
 ---
 
 While working on a multi-stack AWS SAM package I came across this rather obscure error:
 
-> __Error__: Unable to upload artifact ../../spa-hosting.yaml referenced by Location parameter of Hosting resource. 'S3Uploader' object is not subscriptable
+> **Error**: Unable to upload artifact ../../spa-hosting.yaml referenced by Location parameter of Hosting resource. 'S3Uploader' object is not subscriptable
 
 <!-- more -->
 
@@ -22,30 +22,27 @@ After an embarrassing amount of troubleshooting, the culprit turns out to be the
 The nested stack is also published to the Serverless Application Repository, but I copied the template into this project for some additional customizations. As soon as I removed that element, the stack deployed correctly.
 
 ```yaml
-
 # template.yaml
 
-  Hosting:
-    Type: AWS::Serverless::Application
-    Properties:
-      Location: ../../spa-hosting.yaml
-      Parameters: 
-        BucketName: !Ref AWS::StackName
+Hosting:
+  Type: AWS::Serverless::Application
+  Properties:
+    Location: ../../spa-hosting.yaml
+    Parameters:
+      BucketName: !Ref AWS::StackName
 ```
 
 ```yaml
-
 # spa-hosting.yaml
 
 Metadata:
   AWS::ServerlessRepo::Application:
     Name: spa-hosting
     Description: Creates the AWS infrastructure for running a Single Page App  in AWS using S3 & CloudFront
-    Author: LiandraSoftworks
+    Author: Ivan Bliskavka
     ReadmeUrl: README.md
-    HomePageUrl: https://liandrasoftworks.com
+    HomePageUrl: https://bliskavka.com
     SemanticVersion: 1.0.0
-
 ```
 
 I hope this saves somebody some headaches!

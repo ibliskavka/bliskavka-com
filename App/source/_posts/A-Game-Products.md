@@ -34,5 +34,3 @@ During the transition we used a starter template that already had good contrast 
 ![The cart page has a much cleaner feel](a-game-cart-page.png)
 
 ## Check out the site at [A-GameProducts.com](https://a-gameproducts.com)
-
-If you are interested in starting an online store, [please reach out to me](https://www.liandrasoftworks.com/contact)!
