@@ -1,6 +1,9 @@
 # Change Log
 
-2023-07-27 - Added sysops associate test
+2023-07-27
+
+- Added sysops associate test
+- SAM Package Script
 
 2023-07-12 - Copied cdk related blog posts back in. Can have duplicate.
 
