@@ -108,7 +108,8 @@ theme_config:
       google_plus:
     links:
       Screen Saver Gallery: https://www.microsoft.com/en-us/store/apps/screen-saver-gallery/9nblggh5j8tx
-      # Liandra Softworks: https://www.liandrasoftworks.com
+      Liandra Softworks: https://www.liandrasoftworks.com
+      Mind Wellness: https://mind-wellness.net
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
