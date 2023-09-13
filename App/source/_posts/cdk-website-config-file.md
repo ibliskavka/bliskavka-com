@@ -28,8 +28,8 @@ import { PolicyStatement } from 'aws-cdk-lib/aws-iam';
 
 const myConfig = {
   prefix: 'some-static-value',
+  userPoolId: userPool.userPoolId,
   // Call toString() on tokens
-  userPoolId: userPool.ref.toString(),
   region: Aws.REGION.toString(),
   etc,
 };
