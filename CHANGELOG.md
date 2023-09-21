@@ -1,5 +1,10 @@
 # Change Log
 
+2023-09-21
+
+- Added FloridaJS post
+- Added 10x API Start Time post
+
 2023-07-27
 
 - Added sysops associate test
