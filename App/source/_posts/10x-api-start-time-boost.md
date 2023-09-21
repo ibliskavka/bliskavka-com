@@ -1,5 +1,5 @@
 ---
-title: 10x API Cold Start Boost
+title: 10x API Start-up Boost
 date: 2023-09-20 20:03:19
 tags:
   - AWS
@@ -64,7 +64,7 @@ I refactored my lambda layer cache to be a single `cache.json` file that looks l
 
 The lambda can load the data using `readFileSync('/opt/cache.json')` and immediately parse it with no need to decompress.
 
-Presto: cold-start load time is 500ms, subsequent API calls are 50-100ms
+Presto: Start-up load time is 500ms - a 10x improvement!
 
 ## Conclusion
 
