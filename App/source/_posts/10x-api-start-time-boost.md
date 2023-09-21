@@ -45,9 +45,9 @@ Result: This reduced the start-up by 1 second.
 
 The layer improved the load time, so it was good start, but I felt like it should be faster.
 
-I added some basic timers to my warmup function and discovered that almost 3 seconds was spent on parsing the individual table files from the zip file. There are about 217 file in total.
+I added some basic timers to my warmup function and discovered that almost 3 seconds was spent on parsing the 217 files from the zip file.
 
-I updated the code to parse the table files in parallel, which shaved off only about 500ms
+I updated the code to parse the table files in parallel but it only shaved off 500ms.
 
 ## Attempt 3
 
@@ -62,7 +62,7 @@ I refactored my lambda layer cache to be a single `cache.json` file that looks l
 }
 ```
 
-The lambda can load the data using `readFileSync('/opt/cache.json')` and immediately parse it with no need to decompress.
+The lambda can load the data using `readFileSync('/opt/cache.json')` and parse it immediately.
 
 Presto: Start-up load time is 500ms - a 10x improvement!
 
