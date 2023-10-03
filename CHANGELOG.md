@@ -1,5 +1,7 @@
 # Change Log
 
+2023-10-02 - Added TechHub Hackathon
+
 2023-09-21
 
 - Added FloridaJS post

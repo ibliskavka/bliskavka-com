@@ -78,8 +78,9 @@ With 900 stores across the country and hundreds of thousands of customers, we ne
 
 Unfortunately we didn't win. Here are some presentation take-aways for future reference.
 
-- Going first was a disadvantage. We didnt know what to expect, and probably the judges didn't either.
-  - Even if our presentation was a 10/10, there is no way a judge would assign that to the first presentation without seeing all the other stuff. And there is no way they remembered ours after 16 presentations.
+- ~~Going first was a disadvantage. We didnt know what to expect, and probably the judges didn't either.~~
+  - ~~Even if our presentation was a 10/10, there is no way a judge would assign that to the first presentation without seeing all the other stuff. And there is no way they remembered ours after 16 presentations.~~
+  - [Correction 10/3/23]: Going first was a challenge, we were up for it, and we did great!
 - We should have figured out how to screen share a iPhone. Seeing it on a phone would be more impressive.
 - Personally, I was more focused on the practically of the idea and our ability to execute (in 8-12) hours
   - Since only 2 of the judges were asking technical questions, I assume the others were more business minded. They weren't really judging on "can these people do it", they were judging on "as described, will this idea impact a lot of people?"
