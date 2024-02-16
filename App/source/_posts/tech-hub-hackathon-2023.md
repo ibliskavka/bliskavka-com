@@ -4,9 +4,9 @@ date: 2023-10-02 10:27:04
 categories:
   - Career
 tags:
-  - hackathon
+  - Hackathon
   - TechHub
-  - aws
+  - AWS
 ---
 
 We pulled together a team on Friday night, built an app on Saturday, and presented on Sunday. Not a win, but what a great experience!

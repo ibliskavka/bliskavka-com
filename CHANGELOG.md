@@ -1,5 +1,7 @@
 # Change Log
 
+2024-02-16 - PolicySynthesizer Resolution Error
+
 2023-10-02 - Added TechHub Hackathon
 
 2023-09-21
