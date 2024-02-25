@@ -9,7 +9,7 @@ description: Notebook of tips, tricks and walkthroughs I create for personal ref
 keywords:
 author: Ivan Bliskavka
 language: en
-timezone:
+timezone: America/New_York
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -37,7 +37,7 @@ external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
 post_asset_folder: true
-relative_link: false
+relative_link: true
 future: true
 highlight:
   enable: true
@@ -89,10 +89,9 @@ theme_config:
     thumbnail: false
     social_links: # for more icons, please see http://fontawesome.io/icons/#brand
       linkedin: https://www.linkedin.com/in/ibliskavka
-      # twitter:
-      # youtube:
       # facebook: https://www.facebook.com/ivan.bliskavka.5
       github: https://github.com/ibliskavka
+      rss: https://bliskavka.com/atom.xml
   search:
     insight: true
   comment:
@@ -115,3 +114,18 @@ theme_config:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+# https://github.com/hexojs/hexo-generator-feed
+feed:
+  enable: true
+  type:
+    - atom
+  path:
+    - atom.xml
+  limit: 20
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  autodiscovery: true
+  template:
+    - ./source/_atom.xml
