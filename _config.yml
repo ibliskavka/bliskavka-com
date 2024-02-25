@@ -91,7 +91,7 @@ theme_config:
       linkedin: https://www.linkedin.com/in/ibliskavka
       # facebook: https://www.facebook.com/ivan.bliskavka.5
       github: https://github.com/ibliskavka
-      rss: https://bliskavka.com/atom.xml
+      rss: /atom.xml
   search:
     insight: true
   comment:
@@ -127,5 +127,3 @@ feed:
   content_limit_delim: ' '
   order_by: -date
   autodiscovery: true
-  template:
-    - ./source/_atom.xml
