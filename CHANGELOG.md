@@ -9,6 +9,9 @@ Changes related to the repo/code/layouts. The blog content is self documenting.
 - Convert app from SAM to CDK
 - Update hexo dependencies
 - Remove obsolete pages
+- Add RSS Feed
+  - Problem: Doesn't seem to be a way to add absolute URL, so the feed looks bad in aggregators.
+  - There is a setting in `hexo-renderer-marked` to turn this on, but it doesnt work. Maybe the template is overriding it?
 
 ## 2023-07-12
 
