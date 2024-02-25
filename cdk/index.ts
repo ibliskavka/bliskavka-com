@@ -4,9 +4,14 @@ import {
 } from '@aws-prototyping-sdk/static-website';
 import { App, CfnOutput, Stack } from 'aws-cdk-lib';
 import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
+import {
+  Function,
+  FunctionCode,
+  FunctionEventType,
+} from 'aws-cdk-lib/aws-cloudfront';
 import { ARecord, HostedZone, RecordTarget } from 'aws-cdk-lib/aws-route53';
 import { CloudFrontTarget } from 'aws-cdk-lib/aws-route53-targets';
-import path from 'path';
+import path, { join } from 'path';
 
 const baseUrl = 'bliskavka.com';
 const subDomain = `www.${baseUrl}`;
@@ -29,6 +34,7 @@ const certificate = Certificate.fromCertificateArn(
 const website = new StaticWebsite(stack, 'Hosting', {
   websiteContentPath: path.resolve('public'),
   webAclProps: {
+    // Turn off WAF to save on costs
     disable: true,
   },
   distributionProps: {
@@ -36,6 +42,17 @@ const website = new StaticWebsite(stack, 'Hosting', {
     certificate,
     defaultBehavior: {
       origin: new StaticWebsiteOrigin(),
+      functionAssociations: [
+        {
+          eventType: FunctionEventType.VIEWER_REQUEST,
+          function: new Function(stack, 'Function', {
+            comment: 'Automatically append index.html to requests',
+            code: FunctionCode.fromFile({
+              filePath: join(__dirname, 'handler.js'),
+            }),
+          }),
+        },
+      ],
     },
   },
 });

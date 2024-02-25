@@ -8,6 +8,7 @@ Changes related to the repo/code/layouts. The blog content is self documenting.
 
 - Convert app from SAM to CDK
 - Update hexo dependencies
+- Remove obsolete pages
 
 ## 2023-07-12
 
