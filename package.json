@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "5.4.0"
+    "version": "7.1.1"
   },
   "scripts": {
     "build": "rimraf public && hexo generate",
     "cdk": "cdk",
     "synth": "npm run cdk -- synth",
-    "deploy": "npm run cdk -- deploy --require-approval never --no-rollback",
+    "deploy": "npm run cdk -- deploy --require-approval never",
     "diff": "npm run cdk -- diff",
     "start": "hexo server -p 3000 -o",
     "publish": "npm run build && aws s3 sync ./public s3://bliskavka-com-hostingwebsitebucket97bde4fd-s9sa455gu4jx --delete --region us-east-1 && aws cloudfront create-invalidation --distribution-id EKNPBAEUWPOEB --paths '/*' --region us-east-1"
@@ -18,19 +18,19 @@
     "@aws-prototyping-sdk/static-website": "^0.19.68",
     "@types/node": "^20.11.20",
     "aws-cdk-lib": "^2.130.0",
-    "hexo": "^5.4.0",
-    "hexo-generator-archive": "^1.0.0",
-    "hexo-generator-category": "^1.0.0",
-    "hexo-generator-index": "^2.0.0",
+    "hexo": "^7.1.1",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-index": "^3.0.0",
     "hexo-generator-json-content": "^4.2.3",
-    "hexo-generator-tag": "^1.0.0",
-    "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^3.3.0",
-    "hexo-renderer-stylus": "^1.1.0",
-    "hexo-server": "^2.0.0"
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^6.2.0",
+    "hexo-renderer-stylus": "^3.0.1",
+    "hexo-server": "^3.0.0"
   },
   "devDependencies": {
     "aws-cdk": "^2.130.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^5.0.5"
   }
 }
