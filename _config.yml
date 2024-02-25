@@ -98,7 +98,7 @@ theme_config:
     disqus: bliskavka
     facebook: true
   plugins:
-    google_analytics: UA-75853577-1
+    google_analytics: G-T2H8V95YZF
   miscellaneous:
     open_graph: # see http://ogp.me
       fb_app_id:
