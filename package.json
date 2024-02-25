@@ -6,11 +6,18 @@
     "version": "5.4.0"
   },
   "scripts": {
-    "start": "hexo server",
     "build": "rimraf public && hexo generate",
-    "deploy": "npm run build && aws s3 sync public s3://bliskavka-com-stack-app --delete --profile lsw && aws cloudfront create-invalidation --distribution-id EJYVKR1H3HVJ1 --paths / --profile lsw --region us-east-1"
+    "cdk": "cdk",
+    "synth": "npm run cdk -- synth",
+    "deploy": "npm run cdk -- deploy --require-approval never --no-rollback",
+    "diff": "npm run cdk -- diff",
+    "start": "hexo server -p 3000 -o",
+    "publish": "npm run build && aws s3 sync ./public s3://non911-liandrasoftworks-hostingwebsitebucket97bd-ztkicsm9ckiv --delete --region us-east-1 && aws cloudfront create-invalidation --distribution-id E20N8CPU37F0YN --paths '/*' --region us-east-1"
   },
   "dependencies": {
+    "@aws-prototyping-sdk/static-website": "^0.19.68",
+    "@types/node": "^20.11.20",
+    "aws-cdk-lib": "^2.130.0",
     "hexo": "^5.4.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
@@ -23,6 +30,7 @@
     "hexo-server": "^2.0.0"
   },
   "devDependencies": {
+    "aws-cdk": "^2.130.0",
     "rimraf": "^3.0.2"
   }
 }
