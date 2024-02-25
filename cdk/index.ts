@@ -2,7 +2,7 @@ import {
   StaticWebsite,
   StaticWebsiteOrigin,
 } from '@aws-prototyping-sdk/static-website';
-import { App, Stack } from 'aws-cdk-lib';
+import { App, CfnOutput, Stack } from 'aws-cdk-lib';
 import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
 import { ARecord, HostedZone, RecordTarget } from 'aws-cdk-lib/aws-route53';
 import { CloudFrontTarget } from 'aws-cdk-lib/aws-route53-targets';
@@ -58,4 +58,12 @@ new ARecord(stack, 'Web', {
   target: RecordTarget.fromAlias(
     new CloudFrontTarget(website.cloudFrontDistribution)
   ),
+});
+
+new CfnOutput(stack, 'BucketName', {
+  value: website.websiteBucket.bucketName,
+});
+
+new CfnOutput(stack, 'DistributionId', {
+  value: website.cloudFrontDistribution.distributionId,
 });
