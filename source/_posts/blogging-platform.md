@@ -1,5 +1,5 @@
 ---
-title: My Blogging Software
+title: My Blogging Tools
 date: 2024-02-25 10:54:44
 tags:
   - AWS
