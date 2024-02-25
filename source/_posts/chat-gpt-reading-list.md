@@ -20,7 +20,7 @@ I work in the Contact Center space, and we build voice and chat self-service bot
 
 ### ChatGPT for Dummies - Pam Baker
 
-I found this book to be an excellent introduction. It offered good background in layman's terms and was very easy to follow. It's also very explicit about the limitations of the models. GPT is great at generating content, but it may be lies ;)
+I found this book to be an excellent introduction. It offered a good background in layman's terms and was very easy to follow. It's also very explicit about the limitations of the models. GPT is great at generating content, but it may be lies ;)
 
 ### Developing Apps with GPT-4 and Chat GPT - Oliveier Caelen and Marie-Alice Blete
 
@@ -32,13 +32,13 @@ As a developer, I found the code samples useful. The authors showed examples of 
 
 This book might be useful if you are looking to use ChatGPT to create a bunch of ChatGPT content for your blog.
 
-The title looks like click-bait for a reason (it is). The book is full of lists that include a heading, and a small paragraph. Along with a list of tools and a prompt dump.
+The title looks like clickbait for a reason (it is). The book is full of lists that include a heading, and a small paragraph. Along with a list of tools and a prompt dump.
 
 I felt like some sections were written by ChatGPT.
 
 ### Modern Generative AI with ChatGPT and OpenAI Models - Valentina Alto
 
-This is my favorite book so far. It covers some history, ethics, limitations, and has code and use case examples.
+This is my favorite book so far. It covers some history, ethics, and limitations. The book also has code and use case examples.
 
 Chapter 10 had a use case which is right up my alley. Using an Azure OpenAI instance to analyze call center transcripts.
 
@@ -66,4 +66,4 @@ Contact center improvement"
 
 I am going to read a few more books on the topic. Blogs and the internet may have more current content, but I like the curated feel of a book.
 
-In the meantime, I'm making lists for potential Proof of Concepts. This technology really is amazing.
+In the meantime, I'm making lists for potential Proof of Concepts. This technology is amazing.

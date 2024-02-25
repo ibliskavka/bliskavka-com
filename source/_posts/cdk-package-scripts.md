@@ -34,6 +34,6 @@ This configuration allows us to create convenient scripts like deploy/diff/synth
 I can also define multiple entry points
 
 - `cdk`: Interact with the stack directly.
-- `cdk:pipeline`: Deploy a CDK Pipeline which is able patch the CDK app when new changes are pushed.
+- `cdk:pipeline`: Deploy a CDK Pipeline which is able to patch the CDK app when new changes are pushed.
 
 A pipeline execution can be slow, so being able to circumvent the pipeline in a dev/sandbox environment is extremely useful.

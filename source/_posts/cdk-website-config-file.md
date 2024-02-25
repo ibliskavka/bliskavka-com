@@ -12,7 +12,7 @@ To make prebuilt SPA installers with CDK I like to keep environment configuratio
 
 <!-- more -->
 
-The file contains settings like Cognito Pool Id, region, and/or branding information.
+The file contains settings like Cognito Pool ID, region, and/or branding information.
 
 I used to write my own Custom Resource for building this file but recently discovered a simpler CDKV2 way! Credit: [aws-cdk-v2-three-tier-serverless-application/](https://www.freecodecamp.org/news/aws-cdk-v2-three-tier-serverless-application/)
 

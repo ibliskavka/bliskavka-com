@@ -18,7 +18,7 @@ It was a short session on building serverless web applications on AWS.
 
 - Frontend - React w/ AWS Amplify
 - Hosting: S3 with CloudFront and Route53 for DNS
-- Authentication: AWS Cognito with self-sign up
+- Authentication: AWS Cognito with self sign-up
 - Backend: Lambda with API Gateway
 - Storage: S3 + Dynamo DB
 

@@ -8,7 +8,7 @@ tags:
   - DevOps
 ---
 
-I struggled WAY too long trying to sort out the permissions for EFS. Turns out, there are 2 layers. The IAM role, and the Posix permissions. Both throw a similar looking access denied. Finally!
+I struggled WAY too long trying to sort out the permissions for EFS. Turns out, there are 2 layers. The IAM role, and the Posix permissions. Both throw a similar-looking access denied. Finally!
 
 <!-- more -->
 
@@ -83,4 +83,4 @@ task.addToTaskRolePolicy(
 );
 ```
 
-I hope this save someone a headache!
+I hope this saves someone a headache!

@@ -14,7 +14,7 @@ This simplified my code, reduced costs, and improved performance.
 
 The average API calls took 50-100ms! ...but the start-up time was **5 seconds**!!!
 
-I was using a lambda warmer, so most clients didn't hit the 5 seconds latency, but I wondered if I could reduce it.
+I was using a lambda warmer, so most clients didn't hit the 5-second latency, but I wondered if I could reduce it.
 
 **TL;DR;** Store an uncompressed JSON file in a Lambda Layer and rebuild it periodically
 
@@ -43,9 +43,9 @@ Result: This reduced the start-up by 1 second.
 
 ## Attempt 2
 
-The layer improved the load time, so it was good start, but I felt like it should be faster.
+The layer improved the load time, so it was a good start, but I felt like it should be faster.
 
-I added some basic timers to my warmup function and discovered that almost 3 seconds was spent on parsing the 217 files from the zip file.
+I added some basic timers to my warmup function and discovered that almost 3 seconds were spent parsing the 217 files from the zip file.
 
 I updated the code to parse the table files in parallel but it only shaved off 500ms.
 
@@ -68,6 +68,6 @@ Presto: Start-up load time is 500ms - a 10x improvement!
 
 ## Conclusion
 
-If your data is relatively static you can cache as a flat file in a Lambda layer to reduce app complexity, costs, and startup times. Use a Lambda to periodically query a new data set and publish a new Lambda Layer Version.
+If your data is relatively static you can cache it as a flat file in a Lambda layer to reduce app complexity, costs, and startup times. Use a Lambda to periodically query a new data set and publish a new Lambda Layer Version.
 
 When using layers, your maximum package size is 250MB. By compressing your data files you can cache A LOT of data, but you will experience decompression latency.

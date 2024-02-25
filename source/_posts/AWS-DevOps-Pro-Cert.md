@@ -8,4 +8,4 @@ tags:
   - Certification
 ---
 
-I am now a [AWS Certified DevOps Engineer Professional](https://www.credly.com/badges/2055bc33-bf5d-4808-ba30-0fbfe09ca650)!
+I am now an [AWS Certified DevOps Engineer Professional](https://www.credly.com/badges/2055bc33-bf5d-4808-ba30-0fbfe09ca650)!

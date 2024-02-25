@@ -18,7 +18,7 @@ I recently converted a large CDK app to use CDK Pipelines. I LOVE how quickly it
 
 ## Solution
 
-I after some Google-fu I found the solution on the [cdk.dev](https://cdk.dev) Slack channel!
+After some Google-fu, I found the solution on the [cdk.dev](https://cdk.dev) Slack channel!
 
 ```typescript
 new CodePipeline(this, 'Pipeline', {
@@ -35,4 +35,4 @@ By default, `publishAssetsInParallel` is on, creating the issues listed above. A
 - Deployment time for the ~50 asset project was reduced by 20 minutes.
 - On another project, the self-mutate step was reduced from ~60 to 6 minutes!
 
-Your mileage may very, buts its a very simple change that you can validate quickly. Good Luck!
+Your mileage may vary, but it's a very simple change that you can validate quickly. Good Luck!

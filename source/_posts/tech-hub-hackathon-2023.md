@@ -33,11 +33,11 @@ The store manager Mark, was very gracious and spent 30 minutes talking about the
 
 ### Some interesting points
 
-- Each store operates like a franchise and typically manages their own outreach, website, etc.
+- Each store operates like a franchise and typically manages its own outreach, website, etc.
 - Mark just came back from a conference with other ReStores where they shared ideas and approaches.
 - Some stores (Los Angeles) have an excellent social media presence including viral videos on TikTok.
-- Independent stores can have their own website, but there is not a central platform for posting or managing inventory.
-- The Broward store does not have a website, but they have a facebook page.
+- Independent stores can have their own website, but there is no central platform for posting or managing inventory.
+- The Broward store does not have a website, but they have a Facebook page.
 - They move a lot of furniture, and the entire sales floor is typically replaced in a couple of weeks. Because each item is unique, maintaining a website inventory is a lot of overhead.
 
 ### Donation Receiving
@@ -48,18 +48,18 @@ He typically uses Google Lens to scan the item to get a feel for what the item s
 
 ## Proposal
 
-- A SaaS like platform that is owned and managed by the Habitat for Humanity "Corporate"
-- Each store is a "tenant" on the platform and can manage their own inventory.
+- A SaaS-like platform that is owned and managed by the Habitat for Humanity "Corporate"
+- Each store is a "tenant" on the platform and can manage its own inventory.
 - The inventory is streamlined using a web app, on a mobile phone
   - Receiving takes a photo and adds a quality rating.
-  - App uploads photo to the cloud and uses an image recognition to identify the product.
-  - If product is IDed, meta-data and trending price is returned to the app.
+  - The app uploads a photo to the cloud and uses image recognition to identify the product.
+  - If the product is IDed, meta-data and trending price is returned to the app.
     - Price is automatically discounted based on quality rating: 3-50%, 2-60%, 1-70%
   - If the item is not IDed, the app prompts for metadata and price.
-  - Idea: If current user is not the manager, the item will need to be approved by the manager.
+  - Idea: If the current user is not the manager, the item will need to be approved by the manager.
     - Once approved, the item automatically shows up on the website and in the Point of Sale system.
   - A QR Code sticker is printed and attached to the item. (Bluetooth printer)
-  - When the item is sold, the sticker scanned, and it is automatically removed from the website.
+  - When the item is sold, the sticker is scanned, and it is automatically removed from the website.
 - The SaaS platform dynamically builds a storefront for each tenant
   - Adds the ability to search all stores in the vicinity.
   - Customers can buy online and pick up in the store.
@@ -76,16 +76,16 @@ With 900 stores across the country and hundreds of thousands of customers, we ne
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u8ERNvwUoOA?si=S43T59aDLuo4ddoD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-Unfortunately we didn't win. Here are some presentation take-aways for future reference.
+Unfortunately we didn't win. Here are some presentation takeaways for future reference.
 
-- ~~Going first was a disadvantage. We didnt know what to expect, and probably the judges didn't either.~~
+- ~~Going first was a disadvantage. We didn't know what to expect, and probably the judges didn't either.~~
   - ~~Even if our presentation was a 10/10, there is no way a judge would assign that to the first presentation without seeing all the other stuff. And there is no way they remembered ours after 16 presentations.~~
   - [Correction 10/3/23]: Going first was a challenge, we were up for it, and we did great!
-- We should have figured out how to screen share a iPhone. Seeing it on a phone would be more impressive.
-- Personally, I was more focused on the practically of the idea and our ability to execute (in 8-12) hours
-  - Since only 2 of the judges were asking technical questions, I assume the others were more business minded. They weren't really judging on "can these people do it", they were judging on "as described, will this idea impact a lot of people?"
+- We should have figured out how to screen share an iPhone. Seeing it on a phone would be more impressive.
+- Personally, I was more focused on the practicality of the idea and our ability to execute (in 8-12) hours
+  - Since only 2 of the judges were asking technical questions, I assume the others were more business-minded. They weren't judging on "can these people do it", they were judging on "as described, will this idea impact a lot of people?"
   - Go for the big idea - not on the technical feasibility.
-- Reverse Image Search is using an AI model, we should have thrown in that extra jargon.
+- Reverse Image Search using an AI model, we should have thrown in that extra jargon.
 
 ## Links
 

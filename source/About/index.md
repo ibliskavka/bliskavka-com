@@ -1,13 +1,11 @@
 ---
-title: About
+title: About Me
 date: 2018-09-12 20:54:58
 comments: false
 ---
 
-## Me
+I am a [Staff+](https://newsletter.pragmaticengineer.com/p/what-is-a-staff-engineer) engineer at TTEC Digital where my primary focus is optimizing call center experiences using AI technologies. In my leisure time, I enjoy CrossFit, traveling, and beaches.
 
-I love to code. When I was a kid I wanted to be an inventor like Edison or Tesla. Building software is that for me. Each project has it's own obstacles and the output is unique in some way. I invent little logic mechanisms all day long. I am a digital inventor.
+I consider myself extremely lucky to do the work that I love. I find myself consulting and moonlighting on interesting projects because my passion is not coding per se; I enjoy solving technical problems and optimizing processes through code.
 
-One of my goals is to develop and _publish_ 1-2 apps a year. Some make money, but most are just interesting to write :)
-
-[Connect on LinkedIn](https://www.linkedin.com/in/ibliskavka) for my professional profile
+I am passionate about my work and love connecting with like-minded people. If you would like to chat, please grab a slot during my [Office Hours](/Contact), or let's connect on [LinkedIn](https://www.linkedin.com/in/ibliskavka)!

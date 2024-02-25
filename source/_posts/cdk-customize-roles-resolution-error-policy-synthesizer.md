@@ -74,8 +74,8 @@ When I replaced `props.table.grantReadWriteData(this)` with policy statements in
 ## TL;DR;
 
 1. Enable CDK_DEBUG
-2. Check if your stack trace uses the `grant` api. If so, try replacing it with policy statements.
+2. Check if your stack trace uses the `grant` API. If so, try replacing it with policy statements.
 
 ## More Info
 
-I was able to find only a few articles about this error message and none of them dealt with `customizeRoles`. I suspect this may be a bug in the CDK code because my app uses the `grant` api elsewhere in the code and it works as-is.
+I was able to find only a few articles about this error message and none of them dealt with `customizeRoles`. I suspect this may be a bug in the CDK code because my app uses the `grant` API elsewhere in the code and it works as-is.

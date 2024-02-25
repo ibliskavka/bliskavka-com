@@ -6,7 +6,7 @@ tags:
   - Certification
 ---
 
-I am now an certified [AWS Solution Architect Professional](https://www.youracclaim.com/badges/dd8154b4-ccf9-46ce-a5c6-2bdb7dfc99fc/linked_in)!
+I am now a certified [AWS Solution Architect Professional](https://www.youracclaim.com/badges/dd8154b4-ccf9-46ce-a5c6-2bdb7dfc99fc/linked_in)!
 
 I am very proud of this. It's probably the most difficult test I have ever taken. 2.5 years of AWS experience and 40+ hours of training video.
 

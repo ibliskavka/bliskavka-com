@@ -50,4 +50,4 @@ aws s3 ls --profile client --region us-east-1
 
 ## Conclusion
 
-I hopes this saves you a few searches!
+I hope this saves you a few searches!

@@ -10,7 +10,7 @@ tags:
   - Lambda
 ---
 
-At work we develop a lot of AWS Lambda code and occasionally I see a junior developer deploy a Lambda EACH time they test, and they test manually in the Lambda UI!
+At work, we develop a lot of AWS Lambda code and occasionally I see a junior developer deploy a Lambda EACH time they test, and they test manually in the Lambda UI!
 
 <!-- more -->
 

@@ -9,13 +9,13 @@ tags:
   - React
 ---
 
-I recently discovered the [Electron React Boilerplate](https://electron-react-boilerplate.js.org/) project and wanted to use the [AWS Amplify Authenticator](https://docs.amplify.aws/ui/auth/authenticator/q/framework/react/). Lo and Behold: its ugly...
+I recently discovered the [Electron React Boilerplate](https://electron-react-boilerplate.js.org/) project and wanted to use the [AWS Amplify Authenticator](https://docs.amplify.aws/ui/auth/authenticator/q/framework/react/). Lo and Behold: it's ugly...
 
 <!-- more -->
 
 ![Missing Amplify Styles](missing-amplify-styles.png)
 
-I had used the typical `index.tsx` import and I could see the CSS output, but for some reason it did not work.
+I had used the typical `index.tsx` import and I could see the CSS output, but for some reason, it did not work.
 
 ```tsx
 // index.tsx

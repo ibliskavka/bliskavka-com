@@ -20,12 +20,12 @@ Resource handler returned message: "The event source arn * and function * provid
 
 ## Resolution
 
-Check if your CDK Metadata path has changed. Changing the stack or construct logical id will change the metadata path.
+Check if your CDK Metadata path has changed. Changing the stack or construct logical ID will change the metadata path.
 
-If the logical id change was intentional, manually delete the mapping and redeploy.
+If the logical ID change was intentional, manually delete the mapping and redeploy.
 
 ## More Info
 
 When the path changes CDK attempts to replace the mapping. Since CloudFormation must create a new resource before deleting the old, this threw a mapping already exists error.
 
-In my case I changed the stack logical id, which triggered a replacement on the event source mapping.
+In my case, I changed the stack logical ID, which triggered a replacement on the event source mapping.

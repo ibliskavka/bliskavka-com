@@ -14,11 +14,11 @@ Some AWS customers don't use the CLI, and will not grant an external contractor 
 
 ## Summary
 
-1. Create a client specific staging bucket
-2. Share the bucket with the client account via Bucket Policy
+1. Create a client-specific staging bucket
+2. Share the bucket with the client account via the Bucket Policy
 3. Synth the stack to the staging bucket
 4. Share template URL with client
-5. Client can install using the URL in CloudFormation web console with their own user credentials
+5. The client can install using the URL in CloudFormation web console with their user credentials
 
 ## App Staging Bucket Policy
 
@@ -66,7 +66,7 @@ Some AWS customers don't use the CLI, and will not grant an external contractor 
 
 3. Run `cdk synth` to generate your assets.
 4. Modify `cdk.out/template.assets.json` to make the template file name more predictable
-   - find entry with `sourcePath`=`template.template.json`
+   - find the entry with `sourcePath`=`template.template.json`
    - modify its `objectKey` to something like `2.4.1/template.json`
    - (you should probably write some code to automate this)
 5. Run `cdk-assets -v -p ./cdk.out/template.assets.json publish`
@@ -76,7 +76,7 @@ Some AWS customers don't use the CLI, and will not grant an external contractor 
 
 ## Simpler Template Output
 
-Not sure what the side-effects of these are, but this produces a simpler template with less CDK metadata.
+Not sure what the side effects of these are, but this produces a simpler template with less CDK metadata.
 
 `cdk synth --path-metadata false --version-reporting false`
 
@@ -92,4 +92,4 @@ Not sure what the side-effects of these are, but this produces a simpler templat
 
 ## Conclusion
 
-This has been very helpful for creating installers that are accessible to non-developers and usable in beginner AWS environments. I hope it save you some head-scratching!
+This has been very helpful for creating installers that are accessible to non-developers and usable in beginner AWS environments. I hope it saved you some head-scratching!

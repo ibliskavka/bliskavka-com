@@ -10,7 +10,7 @@ tags:
 
 Update 2/7/2022: [Read Synth CDK app to Custom Bucket instead](/2022/02/07/synth-cdk-to-custom-bucket/).
 
-Consulting requires you to work within the client's parameters. Some clients have internal standards, and want you to deliver your white-label CDK app as CloudFormation. Call me old fashioned but...
+Consulting requires you to work within the client's parameters. Some clients have internal standards and want you to deliver your white-label CDK app as CloudFormation. Call me old fashioned but...
 
 <!-- more -->
 
@@ -39,7 +39,7 @@ export class MyProduct extends Stack {
     super(scope, id);
     const bucketName = `${props.env.account}-${props.env.region}-${props.client}`;
     new Bucket(this, 'Bucket', {
-      bucketName: bucketName
+      bucketName: bucketName,
     });
   }
 }
@@ -54,13 +54,13 @@ const app = new cdk.App();
 new MyProduct(app, 'my-product', {
   env: {
     account: '123456879123',
-    region: 'us-east-1'
+    region: 'us-east-1',
   },
-  client: 'foo'
+  client: 'foo',
 });
 ```
 
-And its very easy to access account and region from props like this:
+And it's very easy to access `account` and `region` from props like this:
 
 ```typescript
 const bucketName = `${props.env.account}-${props.env.region}-${props.client}`;
@@ -78,18 +78,10 @@ The above props are evaluated at `synth-time`. We want the account and region va
 
 ### Introducing Stack.of()
 
-In plain CloudFormation you wouldn't hard-code the account and region information, you would use pseudo-functions like: `!Ref AWS::AccountId` and `!Ref AWS::Region` which get evaluated at deploy time.
+In plain CloudFormation you wouldn't hard-code the account and region information, you would use pseudo-functions like: `!Ref AWS::AccountId` and `!Ref AWS::Region` which get evaluated at deploy-time.
 
-Lets rewrite our stack params and exclude the optional `env` field.
-
-```typescript
-const app = new cdk.App();
-new MyProduct(app, 'my-product', {
-  client: 'foo'
-});
-```
-
-Also, lets rewrite our stack to use Stack.of when env is not available.
+Let's rewrite our stack params and exclude the optional `env` field.
+Also, let's rewrite our stack to use Stack.of when env is not available.
 
 ```typescript
 export class MyProduct extends Stack {
@@ -100,7 +92,7 @@ export class MyProduct extends Stack {
     const bucketName = `${stack.account}-${stack.region}-${props.client}`;
 
     new Bucket(this, 'Bucket', {
-      bucketName: bucketName
+      bucketName: bucketName,
     });
   }
 }
@@ -116,7 +108,7 @@ Bonus: The above approach works whether `env` is passed in or not, so we should 
 
 ## CloudFormation Parameters and Tokens
 
-The other major requirement for portable apps is CloudFormation Parameters. So far, we have passed in our `client` name as a string. This is very convenient for CDK deploys so we want to keep this format, but lets rewrite our stack to use CloudFormation parameters so that we can have a deploy-time parameter.
+The other major requirement for portable apps is CloudFormation Parameters. So far, we have passed in our `client` name as a string. This is very convenient for CDK deploys so we want to keep this format, but let's rewrite our stack to use CloudFormation parameters so that we can have a deploy-time parameter.
 
 ```typescript
 export class MyProduct extends Stack {
@@ -125,9 +117,9 @@ export class MyProduct extends Stack {
   }
 
   // Separate build step from constructor to allow inheriting stack to add properties.
-  protected build(props: MyProductProps){
+  protected build(props: MyProductProps) {
     const stack = props.env || Stack.of(this);
-    const bucketName =`${stack.account}-${stack.region}-${props.client}`;
+    const bucketName = `${stack.account}-${stack.region}-${props.client}`;
 
     new Bucket(this, 'Bucket', {
       bucketName: bucketName,
@@ -142,13 +134,13 @@ export class MyPortableProduct extends MyProduct {
     // Add CloudFormation parameter
     const client = new CfnParameter(this, 'Client', {
       type: 'String',
-      description: 'Used for naming'
+      description: 'Used for naming',
     });
 
     // Build the base stack, using the client parameter as a string token
     this.build({
-      client: client.valueAsString
-    })
+      client: client.valueAsString,
+    });
   }
 }
 ```
@@ -176,7 +168,7 @@ new MyPortableProduct(app, 'my-product');
 const output = app.synth();
 const outStack = output.stacks[0];
 
-const templatePath = path.resolve('./cdk.out/template.yaml')
+const templatePath = path.resolve('./cdk.out/template.yaml');
 fs.writeFileSync(templatePath, YAML.stringify(outStack.template));
 ```
 
@@ -185,7 +177,7 @@ Create a new synth script in `package.json`. Notice this script excludes metadat
 ```json
 {
   "scripts": {
-    "synth:product" : "tsc && npx cdk --app 'npx ts-node --prefer-ts-exts bin/product.ts' --path-metadata false --version-reporting false synth --quiet"
+    "synth:product": "tsc && npx cdk --app 'npx ts-node --prefer-ts-exts bin/product.ts' --path-metadata false --version-reporting false synth --quiet"
   }
 }
 ```
@@ -205,11 +197,11 @@ Resources:
     Properties:
       BucketName:
         Fn::Join:
-          - ""
+          - ''
           - - Ref: AWS::AccountId
-            - "-"
+            - '-'
             - Ref: AWS::Region
-            - "-"
+            - '-'
             - Ref: Client
     UpdateReplacePolicy: Retain
     DeletionPolicy: Retain
@@ -217,20 +209,20 @@ Resources:
 
 ## CloudFormation Logical Ids
 
-If you are upgrading an existing CloudFormation or SAM app to CDK, you will notice that the bucket logical id (`Bucket83908E77`) is auto-generated.
+If you are upgrading an existing CloudFormation or SAM app to CDK, you will notice that the bucket logical ID (`Bucket83908E77`) is auto-generated.
 
-If our legacy template logical id was `Bucket`, this would force the bucket to be recreated if you updated the stack.
+If our legacy template logical ID was `Bucket`, this would force the bucket to be recreated if you updated the stack.
 
-We must update the `build` step to use `overrideLogicalId` to specify our own logical id.
+We must update the `build` step to use `overrideLogicalId` to specify our logical ID.
 
 ```typescript
 const bucket = new Bucket(this, 'Bucket', {
-  bucketName: bucketName
+  bucketName: bucketName,
 });
 (bucket.node.defaultChild as CfnBucket).overrideLogicalId('Bucket');
 ```
 
-Now the template has our expected logical id, and we can update our stack without losing our data.
+Now the template has our expected logical ID, and we can update our stack without losing our data.
 
 ```yaml
 Parameters:
@@ -243,11 +235,11 @@ Resources:
     Properties:
       BucketName:
         Fn::Join:
-          - ""
+          - ''
           - - Ref: AWS::AccountId
-            - "-"
+            - '-'
             - Ref: AWS::Region
-            - "-"
+            - '-'
             - Ref: Client
     UpdateReplacePolicy: Retain
     DeletionPolicy: Retain

@@ -8,13 +8,13 @@ tags:
   - DevOps
 ---
 
-Today I discovered that you can deploy arbitrary files to the CDK staging bucket with a human readable file name!
+Today I discovered that you can deploy arbitrary files to the CDK staging bucket with a human-readable file name!
 
 This feature is awesome if you are [pre-synthing CDK apps to CloudFormation Templates](/2022/02/07/synth-cdk-to-custom-bucket).
 
 <!-- more -->
 
-My first attempt was to use [Asset](https://docs.aws.amazon.com/cdk/v2/guide/assets.html) but it used the file hash for the file name, which could change over time and is not user friendly.
+My first attempt was to use [Asset](https://docs.aws.amazon.com/cdk/v2/guide/assets.html) but it used the file hash for the file name, which could change over time and is not user-friendly.
 
 After playing around with a few methods, I discovered that you can do this.
 
