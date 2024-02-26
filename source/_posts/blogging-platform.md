@@ -34,7 +34,7 @@ This setup is pretty easy if you are comfortable with Node and CDK. If you are n
 - Create a [cdk.json](https://github.com/ibliskavka/bliskavka-com/blob/main/cdk.json) file
 - Create the helper scripts in [package.json](https://github.com/ibliskavka/bliskavka-com/blob/main/package.json)
   - The publish script parameters (BucketName & DistributionId) will not be available until you run the deploy
-  - [More info on CDK package scripts](http://localhost:3000/2023/03/02/cdk-package-scripts/)
+  - [More info on CDK package scripts](https://bliskavka.com/2023/03/02/cdk-package-scripts/)
 
 ## Extensions
 
