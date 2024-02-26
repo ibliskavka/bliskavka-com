@@ -100,11 +100,11 @@ theme_config:
   plugins:
     google_analytics: G-T2H8V95YZF
   miscellaneous:
-    # open_graph: # see http://ogp.me
-    #   fb_app_id:
-    #   fb_admins:
-    #   twitter_id: ibliskavka
-    #   google_plus:
+    open_graph: # see http://ogp.me
+      fb_app_id:
+      fb_admins:
+      twitter_id:
+      google_plus:
     links:
       Screen Saver Gallery: https://www.microsoft.com/en-us/store/apps/screen-saver-gallery/9nblggh5j8tx
       Liandra Softworks: https://www.liandrasoftworks.com
