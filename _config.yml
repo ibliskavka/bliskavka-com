@@ -122,7 +122,7 @@ feed:
     - atom
   path:
     - atom.xml
-  limit: 20
+  limit: 0
   content_limit: 140
   content_limit_delim: ' '
   order_by: -date

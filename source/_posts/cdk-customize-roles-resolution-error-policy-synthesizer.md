@@ -1,5 +1,5 @@
 ---
-title: "Resolution error: PolicySynthesizer at 'PolicySynthesizer' should be created in the scope of a Stack, but no Stack found"
+title: 'CDK Resolution error: PolicySynthesizer should be created in the scope of a Stack, but no Stack found'
 date: 2024-02-16 10:47:00
 categories:
   - Troubleshooting
@@ -8,9 +8,9 @@ tags:
   - CDK
 ---
 
-We occasionally have a client which does not allow us to create IAM roles in their AWS account. In this scenario we must define the roles in CloudFormation, they create them, and we inject the role ARNs into the app.
+We occasionally have a client who does not allow us to create IAM roles in their AWS account. In this scenario we must define the roles in CloudFormation, they create them, and we inject the role ARNs into the app.
 
-In the CloudFormation days this would have been a significant overhaul if your app was not already set up for it. But with CDK, this is actually pretty easy with the [Role.customizeRoles](https://github.com/aws/aws-cdk/wiki/Security-And-Safety-Dev-Guide#using-the-customize-roles-feature-to-generate-a-report-and-supply-role-names) method.
+In the CloudFormation days, this would have been a significant overhaul if your app was not already set up for it. But with CDK, this is pretty easy with the [Role.customizeRoles](https://github.com/aws/aws-cdk/wiki/Security-And-Safety-Dev-Guide#using-the-customize-roles-feature-to-generate-a-report-and-supply-role-names) method.
 
 While working on such a project, we bumped into this weird error:
 

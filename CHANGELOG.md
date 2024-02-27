@@ -12,8 +12,6 @@ Changes related to the repo/code/layouts. The blog content is self-documenting.
 - Remove obsolete app pages
 - Update the Google Analytics snippet.
 - Add Atom Feed
-  Problem: The generated feed uses relative image links, which does not render in aggregators
-  - There is a setting in `hexo-renderer-marked` to turn on absolute image URLs, but it doesn't work. Maybe the `hueman` template is overriding it?
 
 ## 2023-07-12
 
