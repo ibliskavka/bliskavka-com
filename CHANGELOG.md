@@ -1,13 +1,14 @@
-# Change Log
+# Changelog
 
-Changes related to the repo/code/layouts. The blog content is self-documenting.
+All notable changes to this project will be documented in this file.
 
-[keep a changelog](https://keepachangelog.com)
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 
 ## 2024-07-09
 
 - Noticed a spike in CloudFront and S3 usage ($26/mo). Popular objects seem to be recursive crawls.
 - Turned off automatic 404 redirects to index.html. I think this was causing dumb crawlers to perform infinite crawl loops on the site.
+- Updated to `@aws/pdk` and other dependencies
 
 ## 2024-02-25
 

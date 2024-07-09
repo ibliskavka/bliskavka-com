@@ -15,9 +15,9 @@
     "publish": "npm run build && aws s3 sync ./public s3://bliskavka-com-hostingwebsitebucket97bde4fd-s9sa455gu4jx --delete --region us-east-1 && aws cloudfront create-invalidation --distribution-id EKNPBAEUWPOEB --paths '/*' --region us-east-1"
   },
   "dependencies": {
-    "@aws-prototyping-sdk/static-website": "^0.19.68",
+    "@aws/pdk": "^0.23.46",
     "@types/node": "^20.14.10",
-    "aws-cdk-lib": "^2.148.0",
+    "aws-cdk-lib": "^2.147.0",
     "hexo": "^7.1.1",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
@@ -31,7 +31,8 @@
     "hexo-server": "^3.0.0"
   },
   "devDependencies": {
-    "aws-cdk": "^2.148.0",
-    "rimraf": "^6.0.0"
+    "aws-cdk": "^2.147.0",
+    "rimraf": "^6.0.0",
+    "ts-node": "^10.9.2"
   }
 }

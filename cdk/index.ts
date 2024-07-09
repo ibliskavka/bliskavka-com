@@ -1,8 +1,5 @@
-import {
-  StaticWebsite,
-  StaticWebsiteOrigin,
-} from '@aws-prototyping-sdk/static-website';
-import { App, CfnOutput, Stack } from 'aws-cdk-lib';
+import { StaticWebsite, StaticWebsiteOrigin } from '@aws/pdk/static-website';
+import { App, CfnOutput, RemovalPolicy, Stack } from 'aws-cdk-lib';
 import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
 import {
   Function,
@@ -11,6 +8,7 @@ import {
 } from 'aws-cdk-lib/aws-cloudfront';
 import { ARecord, HostedZone, RecordTarget } from 'aws-cdk-lib/aws-route53';
 import { CloudFrontTarget } from 'aws-cdk-lib/aws-route53-targets';
+import { BlockPublicAccess, Bucket } from 'aws-cdk-lib/aws-s3';
 import path, { join } from 'path';
 
 const baseUrl = 'bliskavka.com';
@@ -31,7 +29,15 @@ const certificate = Certificate.fromCertificateArn(
   'arn:aws:acm:us-east-1:857240696749:certificate/4cabb1e7-2422-4f2d-b1cc-32c82378fff7'
 );
 
+const bucket = new Bucket(stack, 'Assets', {
+  bucketName: `${stack.stackName}-assets`,
+  blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
+  removalPolicy: RemovalPolicy.DESTROY,
+  autoDeleteObjects: true,
+});
+
 const website = new StaticWebsite(stack, 'Hosting', {
+  websiteBucket: bucket,
   websiteContentPath: path.resolve('public'),
   webAclProps: {
     // Turn off WAF to save on costs
@@ -55,7 +61,7 @@ const website = new StaticWebsite(stack, 'Hosting', {
       ],
     },
     // This doesn't seem to have an effect. Added 30 expiration manually.
-    enableLogging: false,
+    enableLogging: true,
     // Dont redirect to index.html by default. This causes a recursive URL rewrite and increases crawler cost
     errorResponses: [],
   },
