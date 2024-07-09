@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@aws-prototyping-sdk/static-website": "^0.19.68",
-    "@types/node": "^20.11.20",
-    "aws-cdk-lib": "^2.130.0",
+    "@types/node": "^20.14.10",
+    "aws-cdk-lib": "^2.148.0",
     "hexo": "^7.1.1",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
@@ -31,7 +31,7 @@
     "hexo-server": "^3.0.0"
   },
   "devDependencies": {
-    "aws-cdk": "^2.130.0",
-    "rimraf": "^5.0.5"
+    "aws-cdk": "^2.148.0",
+    "rimraf": "^6.0.0"
   }
 }

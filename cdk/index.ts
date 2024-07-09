@@ -54,8 +54,13 @@ const website = new StaticWebsite(stack, 'Hosting', {
         },
       ],
     },
+    // This doesn't seem to have an effect. Added 30 expiration manually.
+    enableLogging: false,
+    // Dont redirect to index.html by default. This causes a recursive URL rewrite and increases crawler cost
+    errorResponses: [],
   },
 });
+
 const zone = HostedZone.fromHostedZoneAttributes(stack, 'HostedZone', {
   hostedZoneId: 'ZLZXN2HT4MQAF',
   zoneName: baseUrl,

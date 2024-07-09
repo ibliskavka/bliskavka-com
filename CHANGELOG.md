@@ -4,6 +4,11 @@ Changes related to the repo/code/layouts. The blog content is self-documenting.
 
 [keep a changelog](https://keepachangelog.com)
 
+## 2024-07-09
+
+- Noticed a spike in CloudFront and S3 usage ($26/mo). Popular objects seem to be recursive crawls.
+- Turned off automatic 404 redirects to index.html. I think this was causing dumb crawlers to perform infinite crawl loops on the site.
+
 ## 2024-02-25
 
 - Convert app from SAM to CDK
