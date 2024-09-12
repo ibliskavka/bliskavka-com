@@ -12,7 +12,7 @@
     "deploy": "npm run cdk -- deploy --require-approval never",
     "diff": "npm run cdk -- diff",
     "start": "hexo server -p 3000 -o",
-    "publish": "npm run build && aws s3 sync ./public s3://bliskavka-com-hostingwebsitebucket97bde4fd-s9sa455gu4jx --delete --region us-east-1 && aws cloudfront create-invalidation --distribution-id EKNPBAEUWPOEB --paths '/*' --region us-east-1"
+    "publish": "npm run build && aws s3 sync ./public s3://bliskavka-com-assets --delete --region us-east-1 && aws cloudfront create-invalidation --distribution-id EKNPBAEUWPOEB --paths '/*' --region us-east-1"
   },
   "dependencies": {
     "@aws/pdk": "^0.23.46",
