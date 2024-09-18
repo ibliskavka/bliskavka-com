@@ -3,7 +3,6 @@ title: Initialize Terraform AWS State Resources
 date: 2024-09-12 15:09:52
 categories:
   - DevOps
-  - Troubleshooting
 tags:
   - AWS
   - Terraform
