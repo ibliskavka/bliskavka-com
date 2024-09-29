@@ -224,3 +224,26 @@ I am using DDB for operational processes during the day. The reporting data does
 - If your data is strictly transactional, you may be able to delete the DDB source data to reduce costs
   - If you have a lot of data, the Table `Scan` + `BatchDelete` operation may be too slow. In my case, the Lambda was timing out after 15 minutes
   - Solution: Delete and recreate the table using the SDK.
+
+## Troubleshooting
+
+### Athena Dynamo DB Connector returns 0 rows
+
+Re-run your query with `LIMIT 10`, if the query succeeds check your lambda logs. You may be getting a permission denied when writing to the spill bucket.
+
+Solution: Manually add this environment variable to the lambda:
+
+- `spill_put_request_headers`=`{"x-amz-server-side-encryption" : "aws:kms"}`
+
+### Athena Dynamo DB Connector Error: Invalid ProjectionExpression
+
+Selecting certain fields works
+`SELECT foo, bar FROM "default"."datalake" limit 10;`
+
+Selecting all fields fails. I am guessing this is because connector puts all the columns into the ProjectionExpression.
+
+`SELECT * FROM "default"."datalake" limit 10;`
+
+```bash
+GENERIC_USER_ERROR: Encountered an exception[software.amazon.awssdk.services.dynamodb.model.DynamoDbException] from your LambdaFunction[arn:aws:lambda:{region}:{account}:function:ddb-connector] executed in context[S3SpillLocation{bucket='ddb-connector', key='athena-spill/xxx', directory=true}] with message[Invalid ProjectionExpression: Expression size has exceeded the maximum allowed size; (Service: DynamoDb, Status Code: 400, Request ID: xxx)]
+```
