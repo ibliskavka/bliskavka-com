@@ -150,7 +150,7 @@ export async function handler(childStackProps: MyMiniAppStackProps) {
 
 ### Using Codebuild to Build the Deployer
 
-Building a Docker container on a MacBook Pro is crazy slow. The following CodeBuild took ~5minutes to build the deployer image and deploy it.
+Building a Docker container on a MacBook Pro is crazy slow. The following CodeBuild took ~5 minutes to build the deployer image and deploy it.
 
 ```typescript
 import { Stack, StackProps } from 'aws-cdk-lib';
