@@ -4,8 +4,8 @@ date: 2024-09-18 08:11:43
 categories:
   - HowTo
 tags:
-  - cdk
-  - aws
+  - CDK
+  - AWS
   - HowTo
   - TypeScript
 ---
