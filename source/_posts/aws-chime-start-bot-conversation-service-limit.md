@@ -41,10 +41,23 @@ I assume this quota is pretty new, because I could not find it in the Service Qu
 
 I do not know yet if the quota will limit how many distinct bots I can use, or how many bot sessions. Ping me if you know the answer!
 
-## Timeline
+## Timeline (ETA 12 Days)
 
 I submitted a support case to get the limit increased. I will keep this timeline updated until the issue is resolved.
 
 - 2024-11-15: Submitted case titled: Need to increase service quote. Option is documented but not available in AWS Console.
-- 2024-11-18: Response from support requesting use case description and what region I expect to use
-- 2024-11-19: Response from support: The request has been forwarded to the service team, expect a response in 7-10 days
+- 2024-11-18: Response from support requesting use case description and what region I expect to use.
+- 2024-11-19: Response from support: The request has been forwarded to the service team, expect a response in 7-10 days.
+- 2024-11-27: The service quota has been updated and applied.
+
+## Conclusion
+
+If developing an Chime SIP Media Application, include time for the following service quota increases:
+
+- Amazon Chime SDK SIP trunking and voice - StartBotConversation Amazon Lex bots
+  - Default: 0
+  - ETA: 12 days
+- Amazon Chime SDK SIP trunking and voice - provisioned phone numbers
+  - Default: 5
+  - ETA: 10 days
+- [Other Quotas](https://docs.aws.amazon.com/general/latest/gr/chime-sdk.html#chm-sdk-pstn-quotas)
