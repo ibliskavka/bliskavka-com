@@ -81,7 +81,7 @@ theme_config:
     Home: /
     # Delete this row if you don't want categories in your header nav bar
     # Categories:
-    screen-saver-gallery: /Screen-Saver-Gallery
+    screen-saver-gallery: https://liandrasoftworks.com/Screen-Saver-Gallery
     about: /About
     contact: /Contact
   customize:
