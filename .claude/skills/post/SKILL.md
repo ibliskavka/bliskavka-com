@@ -37,6 +37,7 @@ tags:
 - The teaser should give enough context to be interesting on its own
 - Keep posts concise — say what needs to be said, then stop
 - Only add code blocks, links, or lists when they add real value
+- Never end with a summary or "Why It Works" section — these read as AI-generated and just restate what was already said. If the post explains itself, let it end.
 
 ## Categories
 
