@@ -10,10 +10,11 @@ Create a new blog post about: $ARGUMENTS
 
 ## Process
 
-1. Read 2-3 existing posts from `source/_posts/` to match the writing style
+1. Read 2-3 random existing posts from `source/_posts/` to match the writing style
 2. Generate a slug from the topic (lowercase, hyphens, concise)
 3. Create the post file at `source/_posts/<slug>.md`
-4. Present the draft to the user for feedback and iterate until they are happy with it
+4. Run the `avoid-ai-writing` skill on the file to remove AI writing patterns
+5. Present the cleaned draft to the user for feedback and iterate until they are happy with it
 
 ## Front Matter Format
 
