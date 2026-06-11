@@ -15,7 +15,7 @@ There's a workshop floating around that generates Amazon Connect contact flows a
 
 <!-- more -->
 
-The [workshop](https://sukwonie.gitbook.io/amazon-connect-aicc-builder-agent-workshop/gWzCDnQYz8mQUQ0GtYa4/en) defaults to Korean, but there's a language toggle in the top bar. It's built on GitBook, so you can actually ask the LLM questions and it'll surface answers from the workshop docs.
+The [workshop](https://sukwonie.gitbook.io/amazon-connect-aicc-builder-agent-workshop/gWzCDnQYz8mQUQ0GtYa4/en) is built on GitBook, so you can actually ask the LLM questions and it'll surface answers from the workshop docs.
 
 The [source code](https://github.com/aws-samples/sample-aicc-builder-for-amazon-connect-ai-agent) deploys a web app that walks you through questions about your call center design (menus, intents, tools) and generates the contact flows and backing infrastructure.
 
@@ -23,7 +23,7 @@ I built a retirement fund sample: callers can check their balance, ask about the
 
 ## Where it broke
 
-The generated CloudFormation had the wrong Lambda handler entry point — `index.handler` instead of `index.lambda_handler`. Easy fix once you know what you're looking for, but it took a debugging pass to find it.
+The generated CloudFormation had the wrong Lambda handler entry point. Easy fix once you know what you're looking for, but it took a debugging pass to find it.
 
 If you're starting fresh, paste the error and the CloudFormation into an LLM and it'll find it in seconds.
 
