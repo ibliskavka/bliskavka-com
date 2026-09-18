@@ -40,4 +40,6 @@ So the fetch moved to `RunScreenSaver()` in `main.brs`, ahead of `screen.createS
 
 Screen Saver Gallery Premium is still in development: no store, no `Task` nodes, a data fetch that happens before the scene ever renders. Same galleries, same API, different thread.
 
-Once it's live, I'll delist the old app so existing subscribers don't hit a service interruption, and point new traffic at the new one. I'll link it here when it ships.
+Once it's live, I'll delist the old app so existing subscribers don't hit a service interruption, and point new traffic at the new one.
+
+**Update:** it's live. [Screen Saver Gallery Premium Is Live](/2026/09/18/screen-saver-gallery-premium-is-live/).
